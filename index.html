@@ -27,8 +27,8 @@
       statusEl.className = isError ? 'error' : '';
     }
 
-    // fetch the JSON that your GitHub Action writes to /data/weather.json
-    const JSON_URL = '/data/weather.json';
+    // fetch the JSON that your GitHub Action writes to /4cast/data/weather.json
+    const JSON_URL = '/4cast/data/weather.json';
 
     try {
       const resp = await fetch(JSON_URL, { cache: "no-cache" });

@@ -5,6 +5,10 @@ on:
     - cron: "*/15 * * * *"   # Every 15 minutes
   workflow_dispatch:         # Allow manual run in the GitHub UI
 
+permissions:
+  contents: write   # <-- REQUIRED for git push using GITHUB_TOKEN
+
+
 jobs:
   update-data:
     runs-on: ubuntu-latest

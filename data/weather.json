@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2025-12-08T16:56:03.364Z",
+  "fetched_at": "2025-12-08T17:41:27.572Z",
   "raw": {
     "?xml": "",
     "product": {
@@ -12,14 +12,14 @@
           "disclaimer": "http://www.bom.gov.au/other/disclaimer.shtml"
         },
         "identifier": "IDS11072",
-        "issue-time-utc": "2025-12-08T11:00:00Z",
-        "issue-time-local": "2025-12-08T21:30:00+10:30",
-        "sent-time": "2025-12-08T11:00:16Z",
-        "expiry-time": "2025-12-09T11:00:00Z",
-        "validity-bgn-time-local": "2025-12-08T00:00:00+10:30",
+        "issue-time-utc": "2025-12-08T17:10:00Z",
+        "issue-time-local": "2025-12-09T03:40:00+10:30",
+        "sent-time": "2025-12-08T17:11:03Z",
+        "expiry-time": "2025-12-09T17:10:00Z",
+        "validity-bgn-time-local": "2025-12-09T00:00:00+10:30",
         "validity-end-time-local": "2025-12-11T23:59:59+10:30",
-        "next-routine-issue-time-utc": "2025-12-08T17:10:00Z",
-        "next-routine-issue-time-local": "2025-12-09T03:40:00+10:30",
+        "next-routine-issue-time-utc": "2025-12-08T23:00:00Z",
+        "next-routine-issue-time-local": "2025-12-09T09:30:00+10:30",
         "status": "O",
         "service": "WSM",
         "sub-service": "FCW",
@@ -31,7 +31,7 @@
           {
             "forecast-period": {
               "text": [
-                "A broad ridge extends over inland parts of the state while a weak cold front clips the southeast late Monday. From Tuesday another high pressure system develops south of the Bight, strengthening the ridge over the state ahead of a trough of low pressure developing across the far northwest late Tuesday persisting late into the week.",
+                "A broad ridge extends over inland parts of the state, another high pressure system develops south of the Bight, strengthening the ridge over the state ahead of a trough of low pressure developing across the far northwest late Tuesday persisting late into the week.",
                 "Wind and wave forecasts are averages. Wind gusts can be 40 per cent stronger than the forecast, and stronger still in squalls and thunderstorms. Maximum waves can be twice the forecast height.",
                 "For latest warnings go to www.bom.gov.au, subscribe to RSS feeds, call 1300 659 210* or listen for warnings on relevant TV and radio broadcasts.",
                 "* Calls to 1300 numbers cost around 27.5c incl. GST, higher from mobiles or public phones. Marine forecasts are also available on VHF and HF radio. View the radio schedule on www.bom.gov.au/marine",
@@ -42,37 +42,30 @@
           {
             "forecast-period": [
               {
-                "text": [
-                  "Southeasterly 15 to 20 knots.",
-                  "Around 1 metre, increasing to 1 to 1.5 metres offshore.",
-                  "Southwesterly 1.5 metres.",
-                  "Clear."
-                ]
-              },
-              {
                 "warning-summary": "Strong Wind Warning for Tuesday for Far West Coast",
                 "text": [
                   "Southeasterly 15 to 25 knots, reaching up to 30 knots offshore in the evening.",
                   "1 to 1.5 metres, increasing to 1.5 to 2.5 metres during the afternoon.",
-                  "Southwesterly 1.5 metres, increasing to 1.5 to 2 metres during the morning.",
+                  "Southwesterly 1.5 metres, increasing to 1.5 to 2 metres during the afternoon.",
                   "Partly cloudy."
                 ]
               },
               {
+                "warning-summary": "Strong Wind Warning for Wednesday for Far West Coast",
                 "text": [
-                  "Southeasterly 20 to 25 knots increasing to 20 to 30 knots in the late afternoon then decreasing to 20 to 25 knots in the late evening.",
+                  "Southeasterly 20 to 25 knots, reaching up to 30 knots during the afternoon and evening.",
                   "1.5 to 2.5 metres.",
-                  "Southwesterly 2 metres.",
-                  "Southeasterly around 1 metre inshore, increasing to 1 to 1.5 metres offshore during the morning.",
-                  "Cloud clearing."
+                  "Southwesterly 1.5 to 2.5 metres.",
+                  "Southeasterly around 1 metre, increasing to 1 to 1.5 metres during the morning, then decreasing to around 1 metre around midday.",
+                  "The chance of a thunderstorm inshore in the morning. Mostly sunny afternoon."
                 ]
               },
               {
                 "text": [
                   "Southeasterly 15 to 20 knots.",
                   "1.5 to 2 metres, decreasing to 1 to 1.5 metres during the morning.",
-                  "Southwesterly 1.5 to 2 metres, decreasing to 1.5 metres during the morning.",
-                  "Southeasterly around 1 metre, increasing to 1 to 1.5 metres during the morning.",
+                  "Southeasterly 1 to 1.5 metres, increasing to 1 to 2 metres during the morning.",
+                  "Southwesterly 1.5 metres.",
                   "Sunny."
                 ]
               }
@@ -81,25 +74,18 @@
           {
             "forecast-period": [
               {
-                "text": [
-                  "Southeasterly about 10 knots.",
-                  "Below 0.5 metres.",
-                  "Southwesterly 1.5 metres, increasing to 1.5 to 2 metres south of Streaky Bay.",
-                  "Clear."
-                ]
-              },
-              {
                 "warning-summary": "Strong Wind Warning for Tuesday for Upper West Coast",
                 "text": [
                   "Southeasterly 15 to 25 knots, reaching up to 30 knots offshore in the evening.",
-                  "Around 1 metre, increasing to 1 to 1.5 metres during the morning, then increasing to 1.5 to 2 metres during the afternoon.",
-                  "Southwesterly 1.5 to 2 metres.",
+                  "1 to 1.5 metres, increasing to 1.5 to 2 metres during the afternoon.",
+                  "Southwesterly 1.5 metres, increasing to 1.5 to 2 metres during the morning.",
                   "Sunny."
                 ]
               },
               {
+                "warning-summary": "Strong Wind Warning for Wednesday for Upper West Coast",
                 "text": [
-                  "Southeasterly 15 to 25 knots increasing to 20 to 30 knots in the late afternoon then decreasing to 20 to 25 knots in the late evening.",
+                  "Southeasterly 15 to 25 knots, reaching up to 30 knots in the evening.",
                   "1.5 to 2 metres, decreasing to 1 to 1.5 metres during the morning, then increasing to 2 to 2.5 metres by early evening.",
                   "Southwesterly 2 to 2.5 metres.",
                   "Partly cloudy."
@@ -107,9 +93,10 @@
               },
               {
                 "text": [
-                  "Southeasterly 15 to 20 knots.",
+                  "Southeasterly 15 to 20 knots turning southerly during the afternoon.",
                   "1 to 2 metres, decreasing to 1 to 1.5 metres during the morning.",
                   "Southwesterly 1.5 to 2 metres, decreasing to 1.5 metres during the morning.",
+                  "Southeasterly around 1 metre.",
                   "The chance of a thunderstorm in the morning. Sunny afternoon."
                 ]
               }
@@ -119,16 +106,8 @@
             "forecast-period": [
               {
                 "text": [
-                  "South to southeasterly 10 to 15 knots.",
-                  "Below 0.5 metres.",
-                  "Southwesterly 2 metres.",
-                  "Partly cloudy."
-                ]
-              },
-              {
-                "text": [
                   "Southeasterly 15 to 25 knots.",
-                  "Around 1 metre, increasing to 1 to 2 metres around midday.",
+                  "1 to 1.5 metres, increasing to 1.5 to 2 metres during the afternoon.",
                   "Southwesterly 1.5 to 2.5 metres.",
                   "Partly cloudy."
                 ]
@@ -136,7 +115,7 @@
               {
                 "text": [
                   "Southeasterly 15 to 25 knots.",
-                  "1.5 metres, increasing to 2 metres by early evening.",
+                  "1.5 metres, increasing to 1.5 to 2 metres during the morning.",
                   "Southwesterly 2 to 2.5 metres.",
                   "Partly cloudy."
                 ]
@@ -145,7 +124,8 @@
                 "text": [
                   "Southeasterly 15 to 25 knots.",
                   "1.5 to 2 metres, decreasing to 1 to 1.5 metres during the morning.",
-                  "Southwesterly 1.5 to 2 metres, decreasing to 1.5 metres during the afternoon.",
+                  "Southwesterly 1.5 to 2 metres, decreasing to 1.5 metres during the morning.",
+                  "Southeasterly around 1 metre.",
                   "Mostly sunny."
                 ]
               }
@@ -155,15 +135,7 @@
             "forecast-period": [
               {
                 "text": [
-                  "Southwesterly 10 to 15 knots.",
-                  "Below 1 metre.",
-                  "Southwesterly 2 metres.",
-                  "Partly cloudy."
-                ]
-              },
-              {
-                "text": [
-                  "Southerly 10 to 15 knots turning southeasterly 15 to 20 knots before dawn.",
+                  "Southeasterly 15 to 20 knots.",
                   "Around 1 metre, increasing to 1 to 1.5 metres in the west during the afternoon.",
                   "Southwesterly 2 metres, increasing to 2 to 3 metres around midday.",
                   "Partly cloudy."
@@ -171,9 +143,9 @@
               },
               {
                 "text": [
-                  "Southeasterly 15 to 25 knots.",
+                  "Southeasterly 15 to 20 knots, reaching up to 25 knots in the west during the afternoon and evening.",
                   "1 to 1.5 metres, increasing to 1.5 to 2 metres in the west by early evening.",
-                  "Southwesterly 2 to 3 metres, decreasing to 2 metres later in the evening.",
+                  "Southwesterly 2 to 3 metres.",
                   "Partly cloudy."
                 ]
               },
@@ -181,7 +153,7 @@
                 "text": [
                   "Southeasterly 15 to 25 knots decreasing to 10 to 15 knots during the evening.",
                   "1.5 to 2 metres, decreasing below 1.5 metres during the afternoon.",
-                  "Southwesterly 1.5 to 2 metres, decreasing to 1.5 metres during the evening.",
+                  "Southwesterly 1.5 to 2 metres.",
                   "Southeasterly around 1 metre.",
                   "Sunny."
                 ]
@@ -192,15 +164,7 @@
             "forecast-period": [
               {
                 "text": [
-                  "Southwesterly 10 to 15 knots.",
-                  "Around 1 metre.",
-                  "Southwesterly 2 to 2.5 metres.",
-                  "Cloudy."
-                ]
-              },
-              {
-                "text": [
-                  "South to southwesterly 10 to 15 knots turning southeasterly 15 to 20 knots during the morning.",
+                  "Southerly 10 to 15 knots turning southeasterly 15 to 20 knots during the morning.",
                   "Around 1 metre, increasing to 1 to 1.5 metres west of Kangaroo Island by early evening.",
                   "Southwesterly 2 to 3 metres.",
                   "Partly cloudy."
@@ -210,7 +174,7 @@
                 "text": [
                   "Southeasterly 15 to 25 knots.",
                   "1 to 1.5 metres, increasing to 1.5 to 2 metres during the afternoon.",
-                  "Southwesterly 2.5 to 3 metres.",
+                  "Southwesterly 2 to 3 metres.",
                   "Partly cloudy. 50% chance of showers."
                 ]
               },
@@ -228,15 +192,7 @@
             "forecast-period": [
               {
                 "text": [
-                  "Southwesterly 10 to 15 knots.",
-                  "Around 1 metre.",
-                  "West to southwesterly 2 to 2.5 metres.",
-                  "Partly cloudy."
-                ]
-              },
-              {
-                "text": [
-                  "Southwesterly 10 to 15 knots turning south to southeasterly 15 to 20 knots during the morning.",
+                  "Southerly 10 to 15 knots turning southeasterly 15 to 20 knots during the day.",
                   "Around 1 metre, increasing to 1 to 1.5 metres by early evening.",
                   "Southwesterly 2 to 3 metres.",
                   "Mostly sunny."
@@ -244,7 +200,7 @@
               },
               {
                 "text": [
-                  "Southeasterly 15 to 25 knots.",
+                  "Southeasterly 15 to 20 knots.",
                   "1 to 1.5 metres, decreasing to 1 metre during the morning, then increasing to 1 to 1.5 metres by early evening.",
                   "Southwesterly 2.5 to 3 metres.",
                   "Partly cloudy. 50% chance of showers."
@@ -264,23 +220,15 @@
             "forecast-period": [
               {
                 "text": [
-                  "Westerly 10 to 15 knots.",
-                  "Around 1 metre, increasing to 1 to 1.5 metres south of Port MacDonnell.",
-                  "Westerly 2.5 to 3 metres.",
-                  "Partly cloudy."
-                ]
-              },
-              {
-                "text": [
-                  "Southwesterly 10 to 15 knots, reaching up to 20 knots south of Port MacDonnell early in the morning. Winds turning southeasterly in the afternoon.",
+                  "Southwesterly 10 to 15 knots turning southeasterly in the afternoon. Winds reaching up to 20 knots north of Beachport in the late evening.",
                   "Around 1 metre.",
-                  "Southwesterly 2.5 to 3 metres, increasing to 3 to 4 metres south of Port MacDonnell around midday.",
+                  "Southwesterly 2.5 to 3 metres, increasing to 2.5 to 4 metres south of Port MacDonnell.",
                   "Mostly sunny."
                 ]
               },
               {
                 "text": [
-                  "Southeasterly 15 to 20 knots.",
+                  "Southeasterly 15 to 20 knots, reaching up to 25 knots inshore in the evening.",
                   "Around 1 metre, increasing to 1 to 1.5 metres by early evening.",
                   "Southwesterly 3 to 4 metres, decreasing to 2.5 to 3 metres during the morning.",
                   "Partly cloudy."
@@ -300,15 +248,7 @@
             "forecast-period": [
               {
                 "text": [
-                  "Southerly 10 to 15 knots, reaching up to 20 knots north of Cowell to Wallaroo.",
-                  "Below 1 metre, increasing to 1 to 1.5 metres north of Cowell to Wallaroo.",
-                  "South to southwesterly around 1 metre south of Cowell to Wallaroo.",
-                  "Clear."
-                ]
-              },
-              {
-                "text": [
-                  "Southerly 10 to 15 knots turning southeasterly 15 to 20 knots during the day. Winds reaching up to 25 knots north of Cowell to Wallaroo in the evening.",
+                  "South to southeasterly 15 to 20 knots, reaching up to 25 knots north of Cowell to Wallaroo in the evening.",
                   "Around 1 metre, increasing to 1 to 1.5 metres during the afternoon.",
                   "South to southwesterly below 1 metre, increasing to 1 to 1.5 metres south of Cowell to Wallaroo during the afternoon.",
                   "Mostly sunny."
@@ -316,7 +256,7 @@
               },
               {
                 "text": [
-                  "Southeasterly 15 to 25 knots.",
+                  "Southeasterly 15 to 20 knots, reaching up to 25 knots south of Port Neill to Port Victoria in the evening.",
                   "1 to 1.5 metres, increasing to 1.5 to 2 metres by early evening.",
                   "South to southwesterly around 1 metre, increasing to 1 to 2 metres south of Cowell to Wallaroo.",
                   "Partly cloudy."
@@ -326,7 +266,7 @@
                 "text": [
                   "Southeasterly 15 to 20 knots.",
                   "1 to 1.5 metres.",
-                  "South to southwesterly below 1 metre, increasing to 1 to 1.5 metres south of Cowell to Wallaroo.",
+                  "South to southwesterly around 1 metre, increasing to 1 to 1.5 metres south of Port Neill to Port Victoria.",
                   "Mostly sunny morning. The chance of a thunderstorm in the afternoon."
                 ]
               }
@@ -336,15 +276,7 @@
             "forecast-period": [
               {
                 "text": [
-                  "South to southwesterly about 10 knots.",
-                  "Below 1 metre.",
-                  "South to southwesterly below 1 metre.",
-                  "Clear."
-                ]
-              },
-              {
-                "text": [
-                  "South to southwesterly 10 to 15 knots tending south to southeasterly 15 to 20 knots early in the morning.",
+                  "South to southeasterly 15 to 20 knots.",
                   "Below 1 metre, increasing to 1 to 1.5 metres during the afternoon.",
                   "South to southwesterly below 1 metre.",
                   "Mostly sunny."
@@ -372,23 +304,15 @@
             "forecast-period": [
               {
                 "text": [
-                  "Southwesterly 10 to 15 knots.",
-                  "Below 1 metre.",
-                  "West to southwesterly 1 to 1.5 metres.",
-                  "Partly cloudy."
-                ]
-              },
-              {
-                "text": [
-                  "South to southwesterly 10 to 15 knots turning southeasterly 15 to 20 knots early in the morning.",
+                  "Southerly 10 to 15 knots turning southeasterly 15 to 20 knots early in the morning.",
                   "Around 1 metre, increasing to 1 to 1.5 metres during the afternoon.",
-                  "West to southwesterly 1 to 1.5 metres, decreasing to around 1 metre during the morning.",
+                  "West to southwesterly around 1 metre.",
                   "Partly cloudy."
                 ]
               },
               {
                 "text": [
-                  "Southeasterly 15 to 25 knots.",
+                  "Southeasterly 15 to 20 knots, reaching up to 25 knots inshore in the evening.",
                   "1 to 2 metres.",
                   "West to southwesterly around 1 metre.",
                   "Partly cloudy."

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Weather Test</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <h1>BOM Test Page</h1>
+  <canvas id="chart"></canvas>
+
+  <script>
+    (async () => {
+      const url = "https://reg.bom.gov.au/fwo/IDS11072.xml";
+      const response = await fetch(url);
+      const text = await response.text();
+
+      const parser = new DOMParser();
+      const xml = parser.parseFromString(text, "text/xml");
+
+      const periods = [...xml.querySelectorAll("forecast-period")];
+      const labels = periods.map(p => p.getAttribute("start-time-local"));
+      const temps = periods.map(p => {
+        const el = p.querySelector('element[type="air_temperature_maximum"]');
+        return el ? Number(el.textContent) : null;
+      });
+
+      new Chart(document.getElementById("chart"), {
+        type: "line",
+        data: {
+          labels,
+          datasets: [
+            {
+              label: "Max Temp",
+              data: temps,
+            }
+          ]
+        }
+      });
+    })();
+  </script>
+</body>
+</html>

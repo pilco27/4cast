@@ -1,43 +1,229 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>4cast Weather</title>
+  <style>
+    body { font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; padding: 1rem; max-width: 900px; margin: auto; }
+    h1 { margin-bottom: 0.25rem; }
+    #status { color: #666; margin-bottom: 1rem; }
+    canvas { width: 100% !important; height: 360px !important; }
+    .error { color: #b00020; }
+  </style>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
-  <h1>4cast</h1>
-  <canvas id="chart"></canvas>
+  <h1>4cast Weather</h1>
+  <div id="status">Loading data…</div>
+  <canvas id="maxTempChart" aria-label="Max temperature chart"></canvas>
 
   <script>
-    (async () => {
-      const url = "https://reg.bom.gov.au/fwo/IDS11072.xml";
-      const response = await fetch(url);
-      const text = await response.text();
+  (async function () {
+    const statusEl = document.getElementById('status');
 
-      const parser = new DOMParser();
-      const xml = parser.parseFromString(text, "text/xml");
+    function updateStatus(text, isError = false) {
+      statusEl.textContent = text;
+      statusEl.className = isError ? 'error' : '';
+    }
 
-      const periods = [...xml.querySelectorAll("forecast-period")];
-      const labels = periods.map(p => p.getAttribute("start-time-local"));
-      const temps = periods.map(p => {
-        const el = p.querySelector('element[type="air_temperature_maximum"]');
-        return el ? Number(el.textContent) : null;
-      });
+    // fetch the JSON that your GitHub Action writes to /data/weather.json
+    const JSON_URL = '/data/weather.json';
 
-      new Chart(document.getElementById("chart"), {
-        type: "line",
-        data: {
-          labels,
-          datasets: [
-            {
-              label: "Max Temp",
-              data: temps,
-            }
-          ]
+    try {
+      const resp = await fetch(JSON_URL, { cache: "no-cache" });
+      if (!resp.ok) throw new Error(`Fetch failed: ${resp.status} ${resp.statusText}`);
+      const json = await resp.json();
+
+      // Try multiple extraction strategies
+      let periods = extractPeriodsFromCommonShapes(json);
+
+      if (!periods || periods.length === 0) {
+        console.warn('No periods found with primary extract. Attempting deep scan of JSON...');
+        periods = deepFindAndExtractForecastPeriods(json);
+      }
+
+      if (!periods || periods.length === 0) {
+        updateStatus('No forecast periods found in data.', true);
+        console.log('Full JSON for debugging:', json);
+        return;
+      }
+
+      // Normalise into labels & numbers
+      const labels = [];
+      const values = [];
+      periods.forEach(p => {
+        // Accept either {date, max} cleaned form or XML-derived objects
+        if (p.date && (typeof p.max === 'number' || typeof p.max === 'string')) {
+          labels.push(p.date);
+          values.push(Number(p.max));
+        } else if (p.start) {
+          // e.g. { start: '2025-12-08T09:00:00', max: '23' }
+          labels.push(p.start.slice(0,10));
+          values.push(Number(p.max));
+        } else if (p.startTime && p.max) {
+          labels.push(p.startTime.slice(0,10));
+          values.push(Number(p.max));
+        } else {
+          // try best effort: look for keys that look like a date or time
+          const keyDate = Object.values(p).find(v => typeof v === 'string' && /\d{4}-\d{2}-\d{2}/.test(v));
+          const keyNum = Object.values(p).find(v => typeof v === 'number' || (!isNaN(Number(v)) && v !== ''));
+          if (keyDate && keyNum !== undefined) {
+            labels.push(String(keyDate).slice(0,10));
+            values.push(Number(keyNum));
+          }
         }
       });
-    })();
+
+      if (values.length === 0) {
+        updateStatus('Could not extract numerical max temperatures from data.', true);
+        console.log('Periods for debugging:', periods);
+        return;
+      }
+
+      updateStatus(`Showing ${values.length} forecast points (max temp).`);
+
+      // Draw Chart.js line chart
+      const ctx = document.getElementById('maxTempChart').getContext('2d');
+      new Chart(ctx, {
+        type: 'line',
+        data: {
+          labels: labels,
+          datasets: [{
+            label: 'Max Temp (°C)',
+            data: values,
+            fill: true,
+            tension: 0.25,
+            pointRadius: 3,
+            borderWidth: 2,
+            backgroundColor: 'rgba(0, 123, 255, 0.08)'
+          }]
+        },
+        options: {
+          responsive: true,
+          scales: {
+            x: { display: true, title: { display: false } },
+            y: { display: true, title: { display: true, text: '°C' } }
+          },
+          plugins: {
+            legend: { display: true }
+          }
+        }
+      });
+
+    } catch (err) {
+      console.error(err);
+      updateStatus('Error loading data — open developer console for details.', true);
+    }
+
+    // ---------- Helpers: try known shapes -------------
+    function extractPeriodsFromCommonShapes(json) {
+      // 1) A cleaned shape your action might produce: { periods: [ { date: 'YYYY-MM-DD', max: 23 }, ... ] }
+      if (Array.isArray(json.periods) && json.periods.length) {
+        return json.periods.map(p => {
+          // accept {date, max} or {date, max_temp}
+          return {
+            date: p.date || p.datetime || p.day || null,
+            max: p.max ?? p.max_temp ?? p.maxTemp ?? p.temperature_maximum ?? null
+          };
+        });
+      }
+
+      // 2) Some authors might store as top-level array
+      if (Array.isArray(json) && json.length && typeof json[0] === 'object') {
+        const likely = json.filter(o => ('date' in o) || ('max' in o) || Object.values(o).some(v => typeof v === 'string' && /\d{4}-\d{2}-\d{2}/.test(v)));
+        if (likely.length) return likely.map(p => ({ date: p.date || Object.values(p).find(v=>typeof v==='string' && /\d{4}-\d{2}-\d{2}/.test(v)), max: p.max || Object.values(p).find(v=>!isNaN(Number(v)))}));
+      }
+
+      // 3) If your action saved { raw: <converted-xml> }
+      if (json.raw) {
+        return tryExtractFromConvertedXml(json.raw);
+      }
+
+      return null;
+    }
+
+    // ---------- Deep scanning for XML converted shapes -------------
+    function deepFindAndExtractForecastPeriods(obj) {
+      // recursively search for nodes named 'forecast-period' (common in BOM xml)
+      let found = [];
+      function walker(node) {
+        if (!node || typeof node !== 'object') return;
+        for (const key of Object.keys(node)) {
+          if (key && key.toString().toLowerCase().includes('forecast-period')) {
+            const candidate = node[key];
+            if (Array.isArray(candidate)) {
+              candidate.forEach(c => {
+                const extracted = tryExtractSingleForecastPeriod(c);
+                if (extracted) found.push(extracted);
+              });
+            } else if (typeof candidate === 'object') {
+              const extracted = tryExtractSingleForecastPeriod(candidate);
+              if (extracted) found.push(extracted);
+            }
+          } else {
+            walker(node[key]);
+          }
+        }
+      }
+      walker(obj);
+      return found;
+    }
+
+    // try to extract from a single forecast-period shaped object
+    function tryExtractSingleForecastPeriod(obj) {
+      if (!obj || typeof obj !== 'object') return null;
+      // attributes may be '@_start-time-local' or '@start-time-local' or 'start-time-local'
+      const start = obj['@_start-time-local'] || obj['@start-time-local'] || obj['start-time-local'] || obj['start_time_local'] || obj['start'];
+      // elements may be stored in obj.element or obj['element']
+      const elements = obj.element || obj['element'] || obj.elements || [];
+      // element could be an object or array of { '@_type': 'air_temperature_maximum', '#text': '23' }
+      const elems = Array.isArray(elements) ? elements : [elements];
+      for (const e of elems) {
+        if (!e) continue;
+        const type = e['@_type'] || e['@type'] || e.type || (e['$'] && e['$'].type);
+        const value = e['#text'] || e['#cdata'] || e.text || e['$']?.text || e.value || (typeof e === 'string' ? e : undefined);
+        if (type && typeof type === 'string' && type.toLowerCase().includes('air_temperature_maximum')) {
+          return { start: start || '', max: value != null ? Number(value) : null };
+        }
+      }
+      // Some converted xml structures keep 'air_temperature_maximum' as its own key
+      if (obj['air_temperature_maximum']) {
+        const v = obj['air_temperature_maximum'];
+        const textVal = (typeof v === 'object') ? (v['#text'] ?? v['text'] ?? null) : v;
+        return { start: start || '', max: textVal != null ? Number(textVal) : null };
+      }
+      return null;
+    }
+
+    // try-extract when the action created a 'raw' key from fast-xml-parser
+    function tryExtractFromConvertedXml(raw) {
+      // fast-xml-parser often creates objects like raw.product['forecast-period'] or raw.product.forecast['forecast-period']
+      // we'll attempt a couple of common paths
+      const candidates = [];
+      if (raw?.product) candidates.push(raw.product);
+      if (raw?.product?.forecast) candidates.push(raw.product.forecast);
+      if (raw?.product?.forecast?.['forecast-period']) candidates.push(raw.product.forecast['forecast-period']);
+      // flatten candidate arrays
+      for (const c of candidates) {
+        if (Array.isArray(c)) {
+          const extracted = c.map(tryExtractSingleForecastPeriod).filter(Boolean);
+          if (extracted.length) return extracted;
+        } else if (typeof c === 'object') {
+          if (Array.isArray(c['forecast-period'])) {
+            const extracted = c['forecast-period'].map(tryExtractSingleForecastPeriod).filter(Boolean);
+            if (extracted.length) return extracted;
+          }
+          // try its children
+          const extracted = deepFindAndExtractForecastPeriods(c);
+          if (extracted && extracted.length) return extracted;
+        }
+      }
+      // fallback: do a generic deep scan
+      return deepFindAndExtractForecastPeriods(raw);
+    }
+
+  })();
   </script>
 </body>
 </html>

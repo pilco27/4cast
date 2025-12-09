@@ -1,0 +1,77 @@
+name: Update Current Observation
+
+on:
+  schedule:
+    - cron: "*/15 * * * *"
+  workflow_dispatch:
+
+# permissions:
+#   contents: write   # <-- REQUIRED for git push using GITHUB_TOKEN
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Ensure data/xml folder exists
+        run: mkdir -p data/xml
+
+      - name: Download XML file
+        run: |
+          curl -s https://reg.bom.gov.au/fwo/IDS60920.xml -o data/xml/IDS60920.xml
+
+      - name: Parse XML for NOARLUNGA temp
+        run: |
+          node << 'EOF'
+          const fs = require('fs');
+          const xml2js = require('xml2js');
+
+          // Load raw XML
+          const rawXml = fs.readFileSync('data/xml/IDS60920.xml', 'utf8');
+
+          // Parse
+          xml2js.parseString(rawXml, (err, result) => {
+            if (err) throw err;
+
+            // Navigate to observations
+            const stations =
+              result.observations?.station || [];
+
+            // Find NOARLUNGA
+            const noarlunga = stations.find(
+              s => s['stn-name']?.[0] === "NOARLUNGA"
+            );
+
+            if (!noarlunga) {
+              console.log("NOARLUNGA not found in dataset.");
+              return;
+            }
+
+            // Extract air_temperature
+            const temp = noarlunga['air_temperature']?.[0];
+
+            const output = {
+              fetched_at: new Date().toISOString(),
+              station: "NOARLUNGA",
+              air_temperature: temp ? Number(temp) : null
+            };
+
+            fs.writeFileSync(
+              'data/currentObs.json',
+              JSON.stringify(output, null, 2)
+            );
+          });
+          EOF
+        env:
+          NODE_OPTIONS: --experimental-modules
+
+      - name: Commit changes
+        run: |
+          git config --global user.name "github-actions"
+          git config --global user.email "github-actions@github.com"
+          git add data/currentObs.json data/xml/IDS60920.xml
+          git commit -m "Update current observations" || echo "No changes"
+          git push

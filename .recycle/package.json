@@ -1,8 +1,0 @@
-{
-  "name": "weather-fetcher",
-  "type": "module",
-  "dependencies": {
-    "node-fetch": "^3.3.2",
-    "fast-xml-parser": "^4.3.4"
-  }
-}

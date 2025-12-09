@@ -29,8 +29,10 @@
       document.getElementById("temp").textContent =
         data.air_temperature.toFixed(1) + "°C";
 
+      const obsTime = new Date(data.observed_at);
       document.getElementById("updated").textContent =
-        "Updated: " + new Date(data.observed_at).toLocaleString();
+        "Updated: " + obsTime.toLocaleString("en-AU", { hour12:false });
+    
     }
     catch (e) {
       document.getElementById("temp").textContent = "Error loading data";

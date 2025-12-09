@@ -67,7 +67,7 @@ jobs:
 
             const output = {
                 station: targetStation,
-                observed_at: match.period[0].$.["time-local"],
+                observed_at: match.period[0].$["time-local"],
                 air_temperature: currentTemp
             };
 

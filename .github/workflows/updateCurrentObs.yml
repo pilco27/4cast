@@ -5,8 +5,8 @@ on:
     - cron: "*/15 * * * *"
   workflow_dispatch:
 
-# permissions:
-#   contents: write   # <-- REQUIRED for git push using GITHUB_TOKEN
+permissions:
+  contents: write   # <-- REQUIRED for git push using GITHUB_TOKEN
 
 jobs:
   update:

@@ -26,50 +26,58 @@ jobs:
       - name: Install XML parser
         run: npm install xml2js
 
-      - name: Parse XML for NOARLUNGA temp
+      - name: Parse XML for selected station
         run: |
-          node << 'EOF'
-          const fs = require('fs');
-          const xml2js = require('xml2js');
+            node << 'EOF'
+            const fs = require("fs");
+            const xml2js = require("xml2js");
 
-          // Load raw XML
-          const rawXml = fs.readFileSync('data/xml/IDS60920.xml', 'utf8');
+            const xml = fs.readFileSync("data/xml/IDS60920.xml", "utf8");
+            const targetStation = process.env.STATION || "NOARLUNGA";
 
-          // Parse
-          xml2js.parseString(rawXml, (err, result) => {
+            xml2js.parseString(xml, { explicitArray: true }, (err, res) => {
             if (err) throw err;
 
-            // Navigate to observations
             const stations =
-              result.observations?.station || [];
+                res.product.observations?.[0]?.station || [];
 
-            // Find NOARLUNGA
-            const noarlunga = stations.find(
-              s => s['stn-name']?.[0] === "NOARLUNGA"
+            const match = stations.find(
+                s => s.$["stn-name"]?.toUpperCase() === targetStation.toUpperCase()
             );
 
-            if (!noarlunga) {
-              console.log("NOARLUNGA not found in dataset.");
-              return;
+            if (!match) {
+                console.error("Station not found:", targetStation);
+                console.log("Available stations:");
+                console.log(stations.map(s => s.$["stn-name"]));
+                process.exit(1);
             }
 
-            // Extract air_temperature
-            const temp = noarlunga['air_temperature']?.[0];
+            const latestPeriod = match.period?.[0]?.level?.[0]?.element || [];
+
+            const tempElement = latestPeriod.find(
+                el => el.$.type === "air_temperature"
+            );
+
+            if (!tempElement) {
+                console.error("No air_temperature element found for station", targetStation);
+                process.exit(1);
+            }
+
+            const currentTemp = parseFloat(tempElement._);
 
             const output = {
-              fetched_at: new Date().toISOString(),
-              station: "NOARLUNGA",
-              air_temperature: temp ? Number(temp) : null
+                station: targetStation,
+                observed_at: match.period[0].$.["time-local"],
+                air_temperature: currentTemp
             };
 
-            fs.writeFileSync(
-              'data/currentObs.json',
-              JSON.stringify(output, null, 2)
-            );
-          });
-          EOF
+            fs.writeFileSync("data/currentObs.json", JSON.stringify(output, null, 2));
+            console.log("Current obs written:", output);
+            });
+            EOF
         env:
-          NODE_OPTIONS: --experimental-modules
+            STATION: "NOARLUNGA"
+
 
       - name: Commit changes
         run: |

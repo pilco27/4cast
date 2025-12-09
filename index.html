@@ -30,7 +30,7 @@
         data.air_temperature.toFixed(1) + "°C";
 
       document.getElementById("updated").textContent =
-        "Updated: " + new Date(data.fetched_at).toLocaleString();
+        "Updated: " + new Date(data.observed_at).toLocaleString();
     }
     catch (e) {
       document.getElementById("temp").textContent = "Error loading data";

@@ -23,6 +23,9 @@ jobs:
         run: |
           curl -s https://reg.bom.gov.au/fwo/IDS60920.xml -o data/xml/IDS60920.xml
 
+      - name: Install XML parser
+        run: npm install xml2js
+
       - name: Parse XML for NOARLUNGA temp
         run: |
           node << 'EOF'

@@ -19,7 +19,7 @@
 <script>
   async function loadTemp() {
     try {
-      const res = await fetch("data/currentObs.json");
+      const res = await fetch("data/currentObs.json?t=" + new Date().getTime());
       const data = await res.json();
 
       if (!data.air_temperature) {

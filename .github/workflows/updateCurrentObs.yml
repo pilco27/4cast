@@ -75,6 +75,6 @@ jobs:
         run: |
           git config --global user.name "github-actions"
           git config --global user.email "github-actions@github.com"
-          git add 4cast/data/currentObs.json 4cast/data/xml/IDS60920.xml
+          git add data/currentObs.json data/xml/IDS60920.xml
           git commit -m "Update current observations" || echo "No changes"
           git push

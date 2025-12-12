@@ -12,6 +12,7 @@ In HTML: <p class="highlight">Text</p>
 
 #header {
   font-size: xx-large;
+  background-color: yellow;
   text-align: center;
 }   
 /*

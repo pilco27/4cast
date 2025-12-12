@@ -22,6 +22,8 @@
       src: url(/4cast/assets/aptosBold.ttf) format('truetype');
     }
     
+
+
     #header { 
       position: fixed;
       top: 0;
@@ -38,6 +40,13 @@
     #temp { 
       font-size: 48px; 
       font-weight: bold; 
+    }
+
+    .stack {
+     display: flex;
+     flex-direction: column;
+     gap: 1.5rem;
+     padding: 1rem;
     }
 
     .sml { 
@@ -69,15 +78,16 @@
     */
   </style>
 </head>
-<body>
 
+<body>
   
-<div id="header">4cast
-  <h1>Noarlunga</h1>
-  </div>
-<h2>Current Temperature</h2>
-<div id="temp">Loading...</div>
-<div id="updated" class="small"></div>
+  <div id="stack">
+    <div id="header">4cast
+      <br>Noarlunga</div>
+    <h2>Current Temperature</h2>
+    <div id="temp">Loading...</div>
+    <div id="updated" class="small"></div>
+  </div> <!--stack end-->
 
 <script>
   async function loadTemp() {
@@ -104,6 +114,5 @@
 
   loadTemp();
 </script>
-
 </body>
 </html>

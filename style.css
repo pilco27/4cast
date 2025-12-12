@@ -1,3 +1,5 @@
+/* FYI NOOB, THIS WHOLE FILE IS COMMENTED OUT.
+
 p {
   font-size:large;
 }
@@ -10,6 +12,7 @@ usage: Use class selectors (with .) to style specific groups:
 In HTML: <p class="highlight">Text</p>
 */
 
+/*
 #header {
   font-size: xx-large;
   background-color: yellow;

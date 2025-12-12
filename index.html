@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" style="font-family: Aptos;">
+<html lang="en" style="font-family: aptos;">
 <head>
   <meta charset="UTF-8">
   <title>4cast Weather</title>
@@ -11,16 +11,28 @@
     - Compare each level: #ID (A) > .Class (B) > <Element> (C).
     - Example: #header .text p = (1,1,1) beats .text p = (0,1,1).
     -->
+
   <style>
     @font-face {
-    font-family: Aptos;
-    src: url(/4cast/assets/aptos.ttf) format('truetype');
-  }
+      font-family: aptos;
+      src: url(/4cast/assets/aptos.ttf) format('truetype');
+    }
+    @font-face {
+      font-family: aptosBold;
+      src: url(/4cast/assets/aptosBold.ttf) format('truetype');
+    }
     
     #header { 
-      font-size: 64px; 
-      background-color:cornflowerblue;
-      padding: 25px 10px 10px 10px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index:100;
+      font-size: 64px;
+      font-family: aptosBold;
+      background-color: cornflowerblue;
+      padding: 25px 10px 10px 15px;
+      box-shadow 1 2px 5px rgba(0,0,0,0.1)
     }
 
     #temp { 
@@ -60,8 +72,9 @@
 <body>
 
   
-<div id="header">4cast</div>
-<h1>Noarlunga</h1>
+<div id="header">4cast
+  <h1>Noarlunga</h1>
+  </div>
 <h2>Current Temperature</h2>
 <div id="temp">Loading...</div>
 <div id="updated" class="small"></div>

@@ -1,4 +1,11 @@
-/* FYI NOOB, THIS WHOLE FILE IS COMMENTED OUT.
+/*
+##############################################################################################
+#
+# FYI NOOB, THIS WHOLE FILE IS COMMENTED OUT.
+#
+# I've placed CSS in index.html for my convenience for now. Maybe I'll put it here later...
+#
+##############################################################################################
 
 p {
   font-size:large;

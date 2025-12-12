@@ -5,16 +5,27 @@
   <title>4cast Weather</title>
   
   <!--<link href="style.css" rel="stylesheet"> <!--for external css file-->
-  
+
+  <!-- Style definitions below are in hierarchial order (Specificity)
+    - Specificity is not math — it's a priority triad (A,B,C).
+    - Compare each level: #ID (A) > .Class (B) > <Element> (C).
+    - Example: #header .text p = (1,1,1) beats .text p = (0,1,1).
+    -->
   <style>
     @font-face {
     font-family: Aptos;
     src: url(/assets/aptos.ttf) format('truetype');
   }
-    body { font-family: Aptos; padding: 40px; }
-    #header { font-family: Aptos; font-size: 48px; background-color:cornflowerblue; }
+    
+    #header { font-size: 48px; background-color:cornflowerblue; }
     #temp { font-size: 48px; font-weight: bold; }
-    .small { font-size: 14px; color: #555; }
+    .sml { font-size: 14px; color: #555; }
+    .med {}
+    .lrg {}
+    body { font-family: Aptos; margin: 0; padding: 40px; }
+    h1 {}
+    h2 {}
+    p {}
   </style>
 </head>
 <body>

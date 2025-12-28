@@ -8,7 +8,7 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/4cast/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/4cast/favicon-16x16.png">
   <link rel="manifest" href="/4cast/site.webmanifest">
-  <link rel="stylesheet" href="/4cast/assets/w3.css">
+  <!--<link rel="stylesheet" href="/4cast/assets/w3.css">-->
 
   <!--<link href="style.css" rel="stylesheet"> <!--for external css file-->
 
@@ -46,19 +46,24 @@
     }
     
     #header { 
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      z-index:100;
+      position: fixed;  /**/
+      top: 0;           /**/
+      left: 0;          /** Locked to top of page & always-on-top **/ 
+      right: 0;         /**/
+      z-index:100;      /**/
       font-size: 64px;
       font-family: aptosBold;
       background-color: cornflowerblue;
       padding: 25px 10px 10px 15px;
-      box-shadow: 1px 2px 5px rgba(0,0,0,0.1);
+      box-shadow: 1px 2px 5px rgba(0,0,0,0.1); /* WORKING?? */
       margin-bottom: 120px;
-      /*height: 60px;*/
-      display:flex;
+      display:grid;
+      grid-template-columns: auto auto;
+    }
+
+    #location {
+      text-align: right;
+      font-size: 15px;
     }
 
     #scroll {
@@ -112,15 +117,14 @@
 <body>
   
   <div id="stack">
-    <div id="header" class="w3-grid">
+    <div id="header">
       <div>4cast</div>
-      <div>Noarlunga</div>
+      <div id="location">Noarlunga</div>
     </div>
     <div id="scroll">
       <div class="w3-grid">
-
-      </div>
-      <h2>Current Temperature</h2>
+        <div style="grid-row: span 3;">☀️</div>
+        <div><h6>[today]</h6>
       <div id="temp">Loading...</div>
       <div id="updated" class="small"></div>
       

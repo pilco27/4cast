@@ -36,6 +36,10 @@
       -->
 
   <style>
+    :root {
+  	  font-size: 16px; /* Base size */
+  	}
+    
     @font-face {
       font-family: aptos;
       src: url(/4cast/assets/aptos.ttf) format('truetype');
@@ -51,19 +55,21 @@
       left: 0;          /** Locked to top of page & always-on-top **/ 
       right: 0;         /**/
       z-index:100;      /**/
-      font-size: 64px;
+      font-size: clamp(1.5rem, 10vw, 3rem); /* Scales from 1.5rem to 3rem */
       font-family: aptosBold;
       background-color: cornflowerblue;
       padding: 25px 10px 10px 15px;
-      box-shadow: 1px 2px 5px rgba(0,0,0,0.1); /* WORKING?? */
+      box-shadow: 0px 5px 10px rgba(0,0,0,0.5);
       margin-bottom: 120px;
       display:grid;
       grid-template-columns: auto auto;
     }
 
     #location {
-      text-align: right;
-      font-size: 15px;
+      text-align: center;
+      align-self: center;
+      font-size: clamp(1rem, 4vw, 1.75rem);
+      /*background-color:red*/
     }
 
     #scroll {
@@ -80,35 +86,45 @@
      flex-direction: column;
      gap: 1.5rem;
      padding: 1rem;
-    } 
+    }
+    
+    .detail {
+     display: grid;
+     grid-template-columns: 1fr 1fr 3fr 1fr 1fr;
+     font-size: clamp(0.5rem 4vw 2rem);
+    }
+    
+    .icon {
+     font-size: 64px; /*clamp(1rem, 4vw, 1.75rem);*/
+     grid-row: span 3;
+    }
+    
+    /*.detail > div:nth-child(1) { grid-column: 1; grid-row: 2; }*/
+    
+    .detail > div:nth-child(2) { grid-column: 2; grid-row: 1; }
+    .detail > div:nth-child(3) { grid-column: 2; grid-row: 2; }
+    .detail > div:nth-child(4) { grid-column: 2; grid-row: 3; }
 
+    .detail > div:nth-child(5) { grid-column: 3; grid-row: 2; }
+    .detail > div:nth-child(6) { grid-column: 3; grid-row: 3; }
+    .detail > div:nth-child(7) { grid-column: 4; grid-row: 2; }
+    .detail > div:nth-child(8) { grid-column: 5; grid-row: 2; }
+
+ 
+    
+    /* Reset all default elements */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+	}
+  
+  	/*
     .sml { 
       font-size: 14px; 
       color: #555; 
-    }
-
-    body {
-      margin: 0px;
-    }
-    /*
-    add below as needed...
-
-    .med {
-    }
+    }*/
     
-    .lrg {
-    }
-
-    
-    h1 {
-    }
-    
-    h2 {
-    }
-    
-    p {
-    }
-    */
   </style>
   
 </head>
@@ -120,17 +136,26 @@
     <div id="header">
       <div>4cast</div>
       <div id="location">Noarlunga</div>
-    </div>
+    </div><!--header end-->
+    
     <div id="scroll">
-      <div class="w3-grid">
-        <div style="grid-row: span 3;">☀️</div>
-        <div><h6>[today]</h6>
+      <div class="detail">
+        <div class="icon">☀️</div>
+        <div>Sunday Dec 28</div>
+        <div><h2>25.5 C</h2></div>
+        <div>mostly sunny</div>
+        <div><h2>23.0 C</h2></div>
+        <div>feels like</div>
+        <div>18 C</div>
+        <div>32 C</div>
+      </div>
+      
       <div id="temp">Loading...</div>
       <div id="updated" class="small"></div>
       
       <hr>
 
-      <div style="font-size: 36px;">
+      <div style="font-size: xxx-large;">
         In principio erat Verbum, et Verbum erat cum Deo, et Verbum erat Deus. 2 In principio a Deo fuit. 3 Omnia per eum facta sunt, et sine eo nihil factum est. 4In eo vita erat, et vita hominum lux erat. 5 Lux in tenebris lucet, et tenebrae non superantur.6 Vir erat a Deo missus, cui nomen erat Ioannes. 7 Testis venit, ut testimonium de luce, ut omnes per se crederent. 8 Non lux, sed testis de luce.9 Vera lux, quae omnibus lucem dat, in mundum veniebat. 10 Erat in mundo, et factus est mundus per ipsum, mundus tamen eum nesciebat. 11 Ille ad suos venit, et sui non receperunt eum. 12 Sed omnibus, qui eum receperunt, qui nomen eius crediderunt, ius dedit ut filii Dei essent nati, non ex sanguine, neque voluntate carnis, neque voluntatis hominis, sed Dei.14 Et verbum factum est caro et habitavit in nobis, et vidimus gloriam eius, gloriam sicut unici Filii a Patre, plena gratia et veritate. 15 (Iohannes testimonium perhibuit de eo, et exclamavit, “Hic erat de quo dixi, ‘Qui venit post me ante me, quia erat ante me.’”) 16 Nam a plenitudine sua omnes recepimus gratiam in gratiam. 17 Lex enim per Moysen data est; gratia et veritas per Jesum Christum. 18 Nemo umquam Deum vidit; Deus unicus Filius, qui est in latere Patris, eum notum fecit.
         <br>Verba translatum per Lingvanex.com
       </div>

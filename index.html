@@ -10,7 +10,24 @@
     - Specificity is not math — it's a priority triad (A,B,C).
     - Compare each level: #ID (A) > .Class (B) > <Element> (C).
     - Example: #header .text p = (1,1,1) beats .text p = (0,1,1).
-    -->
+
+     -or-
+    
+    element{} < .class < #id < inline < !important
+    
+    Think in power levels:
+      body / p / div    → weak
+      .class            → medium
+      #id               → strong
+      style=""          → very strong
+      !important        → unstoppable
+    
+      Or in intent:
+      Elements → broad defaults
+      Classes → reusable styling
+      IDs → unique structure or JS targeting
+    
+      -->
 
   <style>
     @font-face {
@@ -97,11 +114,10 @@
 <body>
   
   <div id="stack">
-    <div id="header">4cast
-      <p>Noarlunga</p>
+    <div id="header">4cast<span style="font-size:x-small; text-align:right;">Noarlunga</span>
     </div>
-    <div id="scroll">
-      <div style="margin-top:250px;"></div>
+    <div id="scroll" style="margin-top:250px;">
+      <div></div>
       <h2>Current Temperature</h2>
       <div id="temp">Loading...</div>
       <div id="updated" class="small"></div>

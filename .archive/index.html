@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en" style="font-family: aptos;">
+<head>
+  <meta charset="UTF-8">
+  <title>4cast Weather</title>
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/4cast/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/4cast/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/4cast/favicon-16x16.png">
+  <link rel="manifest" href="/4cast/site.webmanifest">
+  <!--<link rel="stylesheet" href="/4cast/assets/w3.css">-->
+
+  <!--<link href="style.css" rel="stylesheet"> <!--for external css file-->
+
+  <!-- Style definitions below are in hierarchial order (Specificity)
+    - Specificity is not math — it's a priority triad (A,B,C).
+    - Compare each level: #ID (A) > .Class (B) > <Element> (C).
+    - Example: #header .text p = (1,1,1) beats .text p = (0,1,1).
+
+     -or-
+    
+    element{} < .class < #id < inline < !important
+    
+    Think in power levels:
+      body / p / div    → weak
+      .class            → medium
+      #id               → strong
+      style=""          → very strong
+      !important        → unstoppable
+    
+      Or in intent:
+      Elements → broad defaults
+      Classes → reusable styling
+      IDs → unique structure or JS targeting
+    
+      -->
+
+  <style>
+    /* Reset all default elements */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+	}
+    
+    /* Set base font size */
+    :root {
+  	  font-size: 16px;
+  	}
+        
+    @font-face {
+      font-family: aptos;
+      src: url(/4cast/assets/aptos.ttf) format('truetype');
+    }
+    @font-face {
+      font-family: aptosBold;
+      src: url(/4cast/assets/aptosBold.ttf) format('truetype');
+    }
+    
+    /***** HEADER SECTION *****/
+    #header { 
+      position: fixed;  /**/
+      top: 0;           /**/
+      left: 0;          /** Locked to top of page & always-on-top **/ 
+      right: 0;         /**/
+      z-index:100;      /**/
+      font-size: clamp(0.1rem, 10vw, 10rem); /* Scales from 1.5rem to 3rem */
+      font-family: aptosBold;
+      background-color: cornflowerblue;
+      padding: 25px 10px 10px 15px;
+      box-shadow: 0px 5px 10px rgba(0,0,0,0.5);
+      margin-bottom: 120px;
+      display:grid;
+      grid-template-columns: auto auto;
+    }
+
+    #location {
+      text-align: center;
+      align-self: center;
+      font-size: clamp(0.1rem, 5vw, 10rem);
+      /*background-color:red*/
+    }
+    
+    /***** BODY SECTION *****/
+    #scroll {
+      margin-top: 10vh; /* 10% of viewport height */
+    }
+
+    
+    #stack {
+     display: flex;
+     flex-direction: column;
+     gap: 1.5rem;
+     padding: 1rem;
+    }
+    
+    
+    /***** DETAIL ROWS *****/
+    .detail {
+     display: grid;
+     grid-template-columns: 1fr 1fr 3fr 1fr 1fr;
+     font-size: clamp(0.1rem, 5vw, 5rem);
+     white-space: nowrap; /* Prevents text from wrapping */
+    }
+    
+    .icon {
+     font-size: clamp(0.1rem, 15vw, 10rem);
+     grid-row: span 3;
+     align-self: center;
+     padding-right: 10px;
+    }
+    
+    /*.detail > div:nth-child(1) { grid-column: 1; grid-row: 2; }*/
+    .detail > div:nth-child(2) { grid-column: 2; grid-row: 1; }
+    .detail > div:nth-child(3) { grid-column: 2; grid-row: 2; }
+    .detail > div:nth-child(4) { grid-column: 2; grid-row: 3; }
+
+    .detail > div:nth-child(5) { grid-column: 3; grid-row: 2; }
+    .detail > div:nth-child(6) { grid-column: 3; grid-row: 3; }
+    .detail > div:nth-child(7) { grid-column: 4; grid-row: 2; }
+    .detail > div:nth-child(8) { grid-column: 5; grid-row: 2; }
+    
+    .min {
+    background-color: cornflowerblue;
+    border-radius: 7px 0px 0px 7px; /* top-left, top-right, bottom-right, bottom-left */
+    align-self: center;
+    text-align: center;
+    }
+    
+    .max {
+    background-color: red;
+    border-radius: 0px 7px 7px 0px;
+    align-self: center;
+    text-align: center;
+    }
+
+ 
+    
+    #temp { 
+      font-size: clamp(2rem, 4vw, 5rem); 
+      font-weight: bold; 
+    }
+  
+  	/*
+    .sml { 
+      font-size: 14px; 
+      color: #555; 
+    }*/
+    
+  </style>
+  
+</head>
+
+
+<body>
+  
+  <div id="stack">
+    <div id="header">
+      <div>4cast</div>
+      <div id="location">Noarlunga</div>
+    </div><!--header end-->
+    
+    <div id="scroll">
+      <div class="detail">
+        <div class="icon">☀️</div>
+        <div>Sunday Dec 28</div>
+        <div><h2>25.5 C</h2></div>
+        <div>mostly sunny</div>
+        <div><h2>23.0 C</h2></div>
+        <div>feels like</div>
+        <div class="min">18</div>
+        <div class="max">32</div>
+      </div>
+      <div id="temp">Loading...</div>
+      <div id="updated" class="small"></div>
+      
+      <hr>
+
+      <div style="font-size: xxx-large;">
+        In principio erat Verbum, et Verbum erat cum Deo, et Verbum erat Deus. 2 In principio a Deo fuit. 3 Omnia per eum facta sunt, et sine eo nihil factum est. 4In eo vita erat, et vita hominum lux erat. 5 Lux in tenebris lucet, et tenebrae non superantur.6 Vir erat a Deo missus, cui nomen erat Ioannes. 7 Testis venit, ut testimonium de luce, ut omnes per se crederent. 8 Non lux, sed testis de luce.9 Vera lux, quae omnibus lucem dat, in mundum veniebat. 10 Erat in mundo, et factus est mundus per ipsum, mundus tamen eum nesciebat. 11 Ille ad suos venit, et sui non receperunt eum. 12 Sed omnibus, qui eum receperunt, qui nomen eius crediderunt, ius dedit ut filii Dei essent nati, non ex sanguine, neque voluntate carnis, neque voluntatis hominis, sed Dei.14 Et verbum factum est caro et habitavit in nobis, et vidimus gloriam eius, gloriam sicut unici Filii a Patre, plena gratia et veritate. 15 (Iohannes testimonium perhibuit de eo, et exclamavit, “Hic erat de quo dixi, ‘Qui venit post me ante me, quia erat ante me.’”) 16 Nam a plenitudine sua omnes recepimus gratiam in gratiam. 17 Lex enim per Moysen data est; gratia et veritas per Jesum Christum. 18 Nemo umquam Deum vidit; Deus unicus Filius, qui est in latere Patris, eum notum fecit.
+        <br>Verba translatum per Lingvanex.com
+      </div>
+      
+
+    </div><!--scroll end-->
+  </div><!--stack end-->
+
+<script>
+  async function loadTemp() {
+    try {
+      const res = await fetch("data/currentObs.json?t=" + new Date().getTime());
+      const data = await res.json();
+
+      if (!data.air_temperature) {
+        document.getElementById("temp").textContent = "No data";
+        return;
+      }
+
+      document.getElementById("temp").textContent =
+        data.air_temperature.toFixed(1) + "°C";
+
+        
+      document.getElementById("updated").textContent =
+        "Updated: " + new Date(data.observed_at).toLocaleString();
+    }
+    catch (e) {
+      document.getElementById("temp").textContent = "Error loading data";
+    }
+  }
+
+  loadTemp();
+</script>
+</body>
+</html>

@@ -33,7 +33,10 @@
     #scroll { margin-top: clamp(5rem,16vw,15rem); }
 
     #current {
-      display:grid; grid-template-columns:1fr 2fr 2fr 0.5fr; font-size:clamp(0.1rem,4vw,10rem); white-space:nowrap;
+      display:grid;
+      grid-template-columns:1fr 2fr 2fr 0.5fr;
+      font-size:clamp(0.1rem,4vw,10rem);
+      white-space:nowrap;
       padding:0vh 5vw 1vh 0vw;
     }
     #current > div:nth-child(2) { grid-column:2; grid-row:1; }
@@ -44,15 +47,30 @@
     #current > div:nth-child(7) { grid-column:4; grid-row:2; }
     #current > div:nth-child(8) { grid-column:5; grid-row:2; }
 
+    
+
     #icon { font-size:clamp(0.1rem,10vw,10rem); grid-row:span 3; align-self:center; padding-right:1vw; }
     #icon4 { font-size:clamp(0.1rem,7.5vw,10rem); grid-row:span 2; align-self:center; padding-right:1vw; }
 
     #tempObs { font-size:clamp(0.1rem,5vw,10rem); font-weight:bold; }
     #tempApp { font-size:clamp(0.1rem,4vw,10rem); font-weight:bold; }
 
-    #min, #max { align-self:center; text-align:center; padding:0.75vh; }
-    #min { background-color: cornflowerblue; border-radius:0.5pc 0 0 0.5pc; }
-    #max { background-color:red; border-radius:0 0.5pc 0.5pc 0; }
+    .min-temp {
+      background-color: cornflowerblue;
+      border-radius: 0.5pc 0 0 0.5pc;
+      align-self: center;
+      text-align: center;
+      padding: 0.75vh;
+    }
+
+    .max-temp {
+      background-color: red;
+      border-radius: 0 0.5pc 0.5pc 0;
+      align-self: center;
+      text-align: center;
+      padding: 0.75vh;
+    }
+
 
     .feels { font-size:clamp(0.1rem,3vw,10rem); padding-left:0.25vw; color:#555; }
 
@@ -69,7 +87,7 @@
 
 <body>
   <div id="header">4cast
-    <div id="location">Port Noarlunga
+    <div id="location">Noarlunga
       <div id="updated" class="sml"></div>
     </div>
   </div>
@@ -96,48 +114,48 @@
         <div id="forecast-day1-icon">☀️</div>
         <div id="forecast-day1-date">Loading...</div>
         <div id="forecast-day1-cloud" class="feels">Loading...</div>
-        <div id="forecast-day1-min">--</div>
-        <div id="forecast-day1-max">--</div>
+        <div id="forecast-day1-min" class="min-temp">--</div>
+        <div id="forecast-day1-max" class="max-temp">--</div>
       </div>
 
       <div class="forecast-grid" id="forecast-day2">
         <div id="forecast-day2-icon">☀️</div>
         <div id="forecast-day2-date">Loading...</div>
         <div id="forecast-day2-cloud" class="feels">Loading...</div>
-        <div id="forecast-day2-min">--</div>
-        <div id="forecast-day2-max">--</div>
+        <div id="forecast-day2-min" class="min-temp">--</div>
+        <div id="forecast-day2-max" class="max-temp">--</div>
       </div>
 
       <div class="forecast-grid" id="forecast-day3">
         <div id="forecast-day3-icon">☀️</div>
         <div id="forecast-day3-date">Loading...</div>
         <div id="forecast-day3-cloud" class="feels">Loading...</div>
-        <div id="forecast-day3-min">--</div>
-        <div id="forecast-day3-max">--</div>
+        <div id="forecast-day3-min" class="min-temp">--</div>
+        <div id="forecast-day3-max" class="max-temp">--</div>
       </div>
 
       <div class="forecast-grid" id="forecast-day4">
         <div id="forecast-day4-icon">☀️</div>
         <div id="forecast-day4-date">Loading...</div>
         <div id="forecast-day4-cloud" class="feels">Loading...</div>
-        <div id="forecast-day4-min">--</div>
-        <div id="forecast-day4-max">--</div>
+        <div id="forecast-day4-min" class="min-temp">--</div>
+        <div id="forecast-day4-max" class="max-temp">--</div>
       </div>
 
       <div class="forecast-grid" id="forecast-day5">
         <div id="forecast-day5-icon">☀️</div>
         <div id="forecast-day5-date">Loading...</div>
         <div id="forecast-day5-cloud" class="feels">Loading...</div>
-        <div id="forecast-day5-min">--</div>
-        <div id="forecast-day5-max">--</div>
+        <div id="forecast-day5-min" class="min-temp">--</div>
+        <div id="forecast-day5-max" class="max-temp">--</div>
       </div>
 
       <div class="forecast-grid" id="forecast-day6">
         <div id="forecast-day6-icon">☀️</div>
         <div id="forecast-day6-date">Loading...</div>
         <div id="forecast-day6-cloud" class="feels">Loading...</div>
-        <div id="forecast-day6-min">--</div>
-        <div id="forecast-day6-max">--</div>
+        <div id="forecast-day6-min" class="min-temp">--</div>
+        <div id="forecast-day6-max" class="max-temp">--</div>
       </div>
     </div>
   </div>

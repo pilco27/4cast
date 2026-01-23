@@ -11,32 +11,6 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
-  <!-- Style definitions below are in hierarchial order (Specificity)
-    - Specificity is not math — it's a priority triad (A,B,C).
-    - Compare each level: #ID (A) > .Class (B) > <Element> (C).
-    - Example: #header .text p = (1,1,1) beats .text p = (0,1,1).
-
-     -or-
-    
-    element{} < .class < #id < inline < !important
-    
-    Think in power levels:
-      body / p / div    → weak
-      .class            → medium
-      #id               → strong
-      style=""          → very strong
-      !important        → unstoppable
-    
-      Or in intent:
-      Elements → broad defaults
-      Classes → reusable styling
-      IDs → unique structure or JS targeting
-
-	
-	Before we design and build the data retrieval, lets determine and define all the data points we need so that we can build the JSON cleanly.
-	To better inform data point definitions, please help me scale my CSS IDs appropriately. I have a block for today's observations and forecast, followed by (up to) another six days of forecast data .
-     
-	-->
 
   <style>
     /* Reset all default elements */
@@ -90,15 +64,6 @@
     }
         
     /***** BODY SECTION *****/
-    
-    /* -- no longer required?? --
-    #stack {
-     display: flex;
-     flex-direction: column;
-     gap: 0.1rem;
-     padding: 1rem;
-    }
-    */
         
     #scroll {
       margin-top: clamp(5rem, 16vw, 15rem); /* % of viewport WIDTH */
@@ -191,9 +156,7 @@
     }
    
   </style>
-  
 </head>
-
 
 <body>
   
@@ -225,25 +188,10 @@
         <div id="min">16</div>
         <div id="max">31</div>
       </div>
-
+		
       <hr>
-      
-      <div style="font-size: xx-large;">
-        <br>
-        <br>
-        <br>
-        <br>
-        In principio erat Verbum, et Verbum erat cum Deo, et Verbum erat Deus. 2 In principio a Deo fuit. 3 Omnia per eum facta sunt, et sine eo nihil factum est. 4In eo vita erat, et vita hominum lux erat. 5 Lux in tenebris lucet, et tenebrae non superantur.6 Vir erat a Deo missus, cui nomen erat Ioannes. 7 Testis venit, ut testimonium de luce, ut omnes per se crederent. 8 Non lux, sed testis de luce.9 Vera lux, quae omnibus lucem dat, in mundum veniebat. 10 Erat in mundo, et factus est mundus per ipsum, mundus tamen eum nesciebat. 11 Ille ad suos venit, et sui non receperunt eum. 12 Sed omnibus, qui eum receperunt, qui nomen eius crediderunt, ius dedit ut filii Dei essent nati, non ex sanguine, neque voluntate carnis, neque voluntatis hominis, sed Dei.14 Et verbum factum est caro et habitavit in nobis, et vidimus gloriam eius, gloriam sicut unici Filii a Patre, plena gratia et veritate. 15 (Iohannes testimonium perhibuit de eo, et exclamavit, “Hic erat de quo dixi, ‘Qui venit post me ante me, quia erat ante me.’”) 16 Nam a plenitudine sua omnes recepimus gratiam in gratiam. 17 Lex enim per Moysen data est; gratia et veritas per Jesum Christum. 18 Nemo umquam Deum vidit; Deus unicus Filius, qui est in latere Patris, eum notum fecit.
-        <br>
-        In principio erat Verbum, et Verbum erat cum Deo, et Verbum erat Deus. 2 In principio a Deo fuit. 3 Omnia per eum facta sunt, et sine eo nihil factum est. 4In eo vita erat, et vita hominum lux erat. 5 Lux in tenebris lucet, et tenebrae non superantur.6 Vir erat a Deo missus, cui nomen erat Ioannes. 7 Testis venit, ut testimonium de luce, ut omnes per se crederent. 8 Non lux, sed testis de luce.9 Vera lux, quae omnibus lucem dat, in mundum veniebat. 10 Erat in mundo, et factus est mundus per ipsum, mundus tamen eum nesciebat. 11 Ille ad suos venit, et sui non receperunt eum. 12 Sed omnibus, qui eum receperunt, qui nomen eius crediderunt, ius dedit ut filii Dei essent nati, non ex sanguine, neque voluntate carnis, neque voluntatis hominis, sed Dei.14 Et verbum factum est caro et habitavit in nobis, et vidimus gloriam eius, gloriam sicut unici Filii a Patre, plena gratia et veritate. 15 (Iohannes testimonium perhibuit de eo, et exclamavit, “Hic erat de quo dixi, ‘Qui venit post me ante me, quia erat ante me.’”) 16 Nam a plenitudine sua omnes recepimus gratiam in gratiam. 17 Lex enim per Moysen data est; gratia et veritas per Jesum Christum. 18 Nemo umquam Deum vidit; Deus unicus Filius, qui est in latere Patris, eum notum fecit.
-        <br>Verba translatum per Lingvanex.com
-        <br>
-        In principio erat Verbum, et Verbum erat cum Deo, et Verbum erat Deus. 2 In principio a Deo fuit. 3 Omnia per eum facta sunt, et sine eo nihil factum est. 4In eo vita erat, et vita hominum lux erat. 5 Lux in tenebris lucet, et tenebrae non superantur.6 Vir erat a Deo missus, cui nomen erat Ioannes. 7 Testis venit, ut testimonium de luce, ut omnes per se crederent. 8 Non lux, sed testis de luce.9 Vera lux, quae omnibus lucem dat, in mundum veniebat. 10 Erat in mundo, et factus est mundus per ipsum, mundus tamen eum nesciebat. 11 Ille ad suos venit, et sui non receperunt eum. 12 Sed omnibus, qui eum receperunt, qui nomen eius crediderunt, ius dedit ut filii Dei essent nati, non ex sanguine, neque voluntate carnis, neque voluntatis hominis, sed Dei.14 Et verbum factum est caro et habitavit in nobis, et vidimus gloriam eius, gloriam sicut unici Filii a Patre, plena gratia et veritate. 15 (Iohannes testimonium perhibuit de eo, et exclamavit, “Hic erat de quo dixi, ‘Qui venit post me ante me, quia erat ante me.’”) 16 Nam a plenitudine sua omnes recepimus gratiam in gratiam. 17 Lex enim per Moysen data est; gratia et veritas per Jesum Christum. 18 Nemo umquam Deum vidit; Deus unicus Filius, qui est in latere Patris, eum notum fecit.
-      </div>
-      
-
+		
     </div><!--scroll end-->
-  <!--</div><!--stack end -- not required?? ---->
 
 <script>
   async function loadTemp() {
@@ -274,7 +222,45 @@
 </html>
 
 
+<!-- 
+<div style="font-size: xx-large;">
+        <br>
+        <br>
+        <br>
+        <br>
+        In principio erat Verbum, et Verbum erat cum Deo, et Verbum erat Deus. 2 In principio a Deo fuit. 3 Omnia per eum facta sunt, et sine eo nihil factum est. 4In eo vita erat, et vita hominum lux erat. 5 Lux in tenebris lucet, et tenebrae non superantur.6 Vir erat a Deo missus, cui nomen erat Ioannes. 7 Testis venit, ut testimonium de luce, ut omnes per se crederent. 8 Non lux, sed testis de luce.9 Vera lux, quae omnibus lucem dat, in mundum veniebat. 10 Erat in mundo, et factus est mundus per ipsum, mundus tamen eum nesciebat. 11 Ille ad suos venit, et sui non receperunt eum. 12 Sed omnibus, qui eum receperunt, qui nomen eius crediderunt, ius dedit ut filii Dei essent nati, non ex sanguine, neque voluntate carnis, neque voluntatis hominis, sed Dei.14 Et verbum factum est caro et habitavit in nobis, et vidimus gloriam eius, gloriam sicut unici Filii a Patre, plena gratia et veritate. 15 (Iohannes testimonium perhibuit de eo, et exclamavit, “Hic erat de quo dixi, ‘Qui venit post me ante me, quia erat ante me.’”) 16 Nam a plenitudine sua omnes recepimus gratiam in gratiam. 17 Lex enim per Moysen data est; gratia et veritas per Jesum Christum. 18 Nemo umquam Deum vidit; Deus unicus Filius, qui est in latere Patris, eum notum fecit.
+        <br>
+        In principio erat Verbum, et Verbum erat cum Deo, et Verbum erat Deus. 2 In principio a Deo fuit. 3 Omnia per eum facta sunt, et sine eo nihil factum est. 4In eo vita erat, et vita hominum lux erat. 5 Lux in tenebris lucet, et tenebrae non superantur.6 Vir erat a Deo missus, cui nomen erat Ioannes. 7 Testis venit, ut testimonium de luce, ut omnes per se crederent. 8 Non lux, sed testis de luce.9 Vera lux, quae omnibus lucem dat, in mundum veniebat. 10 Erat in mundo, et factus est mundus per ipsum, mundus tamen eum nesciebat. 11 Ille ad suos venit, et sui non receperunt eum. 12 Sed omnibus, qui eum receperunt, qui nomen eius crediderunt, ius dedit ut filii Dei essent nati, non ex sanguine, neque voluntate carnis, neque voluntatis hominis, sed Dei.14 Et verbum factum est caro et habitavit in nobis, et vidimus gloriam eius, gloriam sicut unici Filii a Patre, plena gratia et veritate. 15 (Iohannes testimonium perhibuit de eo, et exclamavit, “Hic erat de quo dixi, ‘Qui venit post me ante me, quia erat ante me.’”) 16 Nam a plenitudine sua omnes recepimus gratiam in gratiam. 17 Lex enim per Moysen data est; gratia et veritas per Jesum Christum. 18 Nemo umquam Deum vidit; Deus unicus Filius, qui est in latere Patris, eum notum fecit.
+        <br>Verba translatum per Lingvanex.com
+        <br>
+        In principio erat Verbum, et Verbum erat cum Deo, et Verbum erat Deus. 2 In principio a Deo fuit. 3 Omnia per eum facta sunt, et sine eo nihil factum est. 4In eo vita erat, et vita hominum lux erat. 5 Lux in tenebris lucet, et tenebrae non superantur.6 Vir erat a Deo missus, cui nomen erat Ioannes. 7 Testis venit, ut testimonium de luce, ut omnes per se crederent. 8 Non lux, sed testis de luce.9 Vera lux, quae omnibus lucem dat, in mundum veniebat. 10 Erat in mundo, et factus est mundus per ipsum, mundus tamen eum nesciebat. 11 Ille ad suos venit, et sui non receperunt eum. 12 Sed omnibus, qui eum receperunt, qui nomen eius crediderunt, ius dedit ut filii Dei essent nati, non ex sanguine, neque voluntate carnis, neque voluntatis hominis, sed Dei.14 Et verbum factum est caro et habitavit in nobis, et vidimus gloriam eius, gloriam sicut unici Filii a Patre, plena gratia et veritate. 15 (Iohannes testimonium perhibuit de eo, et exclamavit, “Hic erat de quo dixi, ‘Qui venit post me ante me, quia erat ante me.’”) 16 Nam a plenitudine sua omnes recepimus gratiam in gratiam. 17 Lex enim per Moysen data est; gratia et veritas per Jesum Christum. 18 Nemo umquam Deum vidit; Deus unicus Filius, qui est in latere Patris, eum notum fecit.
+      </div>
 
+
+
+
+Style definitions below are in hierarchial order (Specificity)
+    - Specificity is not math — it's a priority triad (A,B,C).
+    - Compare each level: #ID (A) > .Class (B) > <Element> (C).
+    - Example: #header .text p = (1,1,1) beats .text p = (0,1,1).
+
+     -or-
+    
+    element{} < .class < #id < inline < !important
+    
+    Think in power levels:
+      body / p / div    → weak
+      .class            → medium
+      #id               → strong
+      style=""          → very strong
+      !important        → unstoppable
+    
+      Or in intent:
+      Elements → broad defaults
+      Classes → reusable styling
+      IDs → unique structure or JS targeting
+     
+	-->
 
 <!-- W3SCHOOLS BLANK TEMPLATE BELOW -- 
 <!doctype html>

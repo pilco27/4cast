@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en" style="font-family: aptos;">
+<head>
+  <meta charset="UTF-8">
+  <title>4cast Weather</title>
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png">
+  <link rel="manifest" href="/assets/favicon/manifest.json">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
+
+  <style>
+    /* Reset all default elements */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+	}
+    
+    /* Set base font size - 1rem (used by min/max etc.) */
+    :root {
+  	  font-size: 16px;
+  	}
+        
+    @font-face {
+      font-family: aptos;
+      src: url(/4cast/assets/aptos.ttf) format('truetype');
+    }
+    @font-face {
+      font-family: aptosBold;
+      src: url(/4cast/assets/aptosBold.ttf) format('truetype');
+    }
+    
+    /***** HEADER SECTION *****/
+    #header { 
+      position: fixed;  /**/
+      top: 0;           /**/
+      left: 0;          /** Locked to top of page & always-on-top **/ 
+      right: 0;         /**/
+      z-index:100;      /**/
+      font-size: clamp(0.1rem, 10vw, 10rem);
+      font-family: 'Dancing Script', cursive;
+      background-color: cornflowerblue;
+      padding: 1vh 5vw 0.5vh 2.5vw;
+      box-shadow: 0vw 0.5vh 0.75vh rgba(0,0,0,0.5);
+      display:grid;
+      grid-template-columns: auto auto;
+    }
+
+    #location {
+      text-align: right;
+      align-self: self-end;
+	  font-family: aptosBold;
+      font-size: clamp(0.1rem, 5vw, 10rem);
+    }
+      
+  	.sml { 
+      font-size: clamp(0.1rem, 2vw, 10rem);
+      text-align: right;
+      color: #555; 
+    }
+        
+    /***** BODY SECTION *****/
+        
+    #scroll {
+      margin-top: clamp(5rem, 16vw, 15rem); /* % of viewport WIDTH */
+    }
+    
+    /***** DETAIL ROWS *****/
+    #current {
+      display: grid;
+      grid-template-columns: 1fr 2fr 2fr 0.5fr;
+      font-size: clamp(0.1rem, 4vw, 10rem);
+      white-space: nowrap;
+      /*padding: 0.5vh;*/
+      padding: 0vh 5vw 1vh 0vw;
+    }
+    /* Column 2 */
+    #current > div:nth-child(2) { grid-column: 2; grid-row: 1; }
+    #current > div:nth-child(3) { grid-column: 2; grid-row: 2; }
+    #current > div:nth-child(4) { grid-column: 2; grid-row: 3; }
+    /* Column 3 */
+    #current > div:nth-child(5) { grid-column: 3; grid-row: 2; }
+    #current > div:nth-child(6) { grid-column: 3; grid-row: 3; }
+    /* Column 4 */
+    #current > div:nth-child(7) { grid-column: 4; grid-row: 2; }
+    #current > div:nth-child(8) { grid-column: 5; grid-row: 2; }
+
+
+    #forecast {
+      display: grid;
+      grid-template-columns: 0.75fr 4.25fr 0.5fr;
+      font-size: clamp(0.1rem, 4vw, 10rem);
+      white-space: nowrap;
+      padding: 0.5vh;
+      padding-right: 5vw;
+    }
+    /* Column 2 */
+    #forecast > div:nth-child(2) { grid-column: 2; grid-row: 1; }
+    #forecast > div:nth-child(3) { grid-column: 2; grid-row: 2; }
+    /* Column 3 */
+    #forecast > div:nth-child(4) { grid-column: 3; grid-row: 1; }
+    /* Column 4 */
+    #forecast > div:nth-child(5) { grid-column: 4; grid-row: 1; }
+
+    #icon {
+      font-size: clamp(0.1rem, 10vw, 10rem);
+      grid-row: span 3;
+      align-self: center;
+      padding-right: 1vw;
+    }
+
+    #icon4 {
+      font-size: clamp(0.1rem, 7.5vw, 10rem);
+      grid-row: span 2;
+      align-self: center;
+      padding-right: 1vw;
+    }
+
+    #tempObs { 
+      font-size: clamp(0.1rem, 5vw, 10rem); 
+      font-weight: bold; 
+    }
+
+    #tempApp { 
+      font-size: clamp(0.1rem, 4vw, 10rem); 
+      font-weight: bold; 
+    }
+
+    /* -- placeholder for data processing
+    #cloud {}*/
+    
+    #min {
+      background-color: cornflowerblue;
+      border-radius: 0.5pc 0pc 0pc 0.5pc;
+      align-self: center;
+      text-align: center;
+      padding: 0.75vh;
+    }
+    
+    #max {
+      background-color: red;
+      border-radius: 0pc 0.5pc 0.5pc 0pc;
+      align-self: center;
+      text-align: center;
+      padding: 0.75vh;
+    }
+
+    .feels {
+      font-size: clamp(0.1rem, 3vw, 10rem);
+      padding-left: 0.25vw;
+      color: #555;
+    }
+   
+  </style>
+</head>
+
+<body>
+  
+  <!--<div id="stack"> -- not required?? -->
+    <div id="header">4cast
+      <div id="location">Port Noarlunga
+        <div id="updated" class="sml"></div>
+      </div>
+    </div><!--header end-->
+    
+    <div id="scroll">
+      <div id="current">
+        <div id="icon">☀️</div>
+        <div id="today">Sunday Dec 28</div>
+        <div id="tempObs">Loading...</div>
+        <div id="cloud" class="feels">Mostly sunny</div>
+        <div id="tempApp">Loading...</div>
+        <div class="feels">Feels like</div>
+        <div id="min">18</div>
+        <div id="max">32</div>
+      </div>
+
+      <hr>
+
+      <div id="forecast">
+        <div id="icon4">☀️</div>
+        <div id="morrow">Monday Dec 29</div>
+        <div id="cloud" class="feels">Mostly sunny</div>
+        <div id="min">16</div>
+        <div id="max">31</div>
+      </div>
+		
+      <hr>
+		
+    </div><!--scroll end-->
+
+<script>
+  async function loadTemp() {
+    try {
+      const res = await fetch("data/currentObs.json?t=" + new Date().getTime());
+      const data = await res.json();
+
+      if (!data.air_temperature) {
+        document.getElementById("tempObs").textContent = "No data";
+        return;
+      }
+
+      document.getElementById("tempObs").textContent =
+        data.air_temperature.toFixed(1) + "°C";
+
+        
+      document.getElementById("updated").textContent =
+        "Updated: " + new Date(data.observed_at).toLocaleString();
+    }
+    catch (e) {
+      document.getElementById("tempObs").textContent = "Error loading data";
+    }
+  }
+
+  loadTemp();
+</script>
+</body>
+</html>
+
+
+<!-- 
+<div style="font-size: xx-large;">
+        <br>
+        <br>
+        <br>
+        <br>
+        In principio erat Verbum, et Verbum erat cum Deo, et Verbum erat Deus. 2 In principio a Deo fuit. 3 Omnia per eum facta sunt, et sine eo nihil factum est. 4In eo vita erat, et vita hominum lux erat. 5 Lux in tenebris lucet, et tenebrae non superantur.6 Vir erat a Deo missus, cui nomen erat Ioannes. 7 Testis venit, ut testimonium de luce, ut omnes per se crederent. 8 Non lux, sed testis de luce.9 Vera lux, quae omnibus lucem dat, in mundum veniebat. 10 Erat in mundo, et factus est mundus per ipsum, mundus tamen eum nesciebat. 11 Ille ad suos venit, et sui non receperunt eum. 12 Sed omnibus, qui eum receperunt, qui nomen eius crediderunt, ius dedit ut filii Dei essent nati, non ex sanguine, neque voluntate carnis, neque voluntatis hominis, sed Dei.14 Et verbum factum est caro et habitavit in nobis, et vidimus gloriam eius, gloriam sicut unici Filii a Patre, plena gratia et veritate. 15 (Iohannes testimonium perhibuit de eo, et exclamavit, “Hic erat de quo dixi, ‘Qui venit post me ante me, quia erat ante me.’”) 16 Nam a plenitudine sua omnes recepimus gratiam in gratiam. 17 Lex enim per Moysen data est; gratia et veritas per Jesum Christum. 18 Nemo umquam Deum vidit; Deus unicus Filius, qui est in latere Patris, eum notum fecit.
+        <br>
+        In principio erat Verbum, et Verbum erat cum Deo, et Verbum erat Deus. 2 In principio a Deo fuit. 3 Omnia per eum facta sunt, et sine eo nihil factum est. 4In eo vita erat, et vita hominum lux erat. 5 Lux in tenebris lucet, et tenebrae non superantur.6 Vir erat a Deo missus, cui nomen erat Ioannes. 7 Testis venit, ut testimonium de luce, ut omnes per se crederent. 8 Non lux, sed testis de luce.9 Vera lux, quae omnibus lucem dat, in mundum veniebat. 10 Erat in mundo, et factus est mundus per ipsum, mundus tamen eum nesciebat. 11 Ille ad suos venit, et sui non receperunt eum. 12 Sed omnibus, qui eum receperunt, qui nomen eius crediderunt, ius dedit ut filii Dei essent nati, non ex sanguine, neque voluntate carnis, neque voluntatis hominis, sed Dei.14 Et verbum factum est caro et habitavit in nobis, et vidimus gloriam eius, gloriam sicut unici Filii a Patre, plena gratia et veritate. 15 (Iohannes testimonium perhibuit de eo, et exclamavit, “Hic erat de quo dixi, ‘Qui venit post me ante me, quia erat ante me.’”) 16 Nam a plenitudine sua omnes recepimus gratiam in gratiam. 17 Lex enim per Moysen data est; gratia et veritas per Jesum Christum. 18 Nemo umquam Deum vidit; Deus unicus Filius, qui est in latere Patris, eum notum fecit.
+        <br>Verba translatum per Lingvanex.com
+        <br>
+        In principio erat Verbum, et Verbum erat cum Deo, et Verbum erat Deus. 2 In principio a Deo fuit. 3 Omnia per eum facta sunt, et sine eo nihil factum est. 4In eo vita erat, et vita hominum lux erat. 5 Lux in tenebris lucet, et tenebrae non superantur.6 Vir erat a Deo missus, cui nomen erat Ioannes. 7 Testis venit, ut testimonium de luce, ut omnes per se crederent. 8 Non lux, sed testis de luce.9 Vera lux, quae omnibus lucem dat, in mundum veniebat. 10 Erat in mundo, et factus est mundus per ipsum, mundus tamen eum nesciebat. 11 Ille ad suos venit, et sui non receperunt eum. 12 Sed omnibus, qui eum receperunt, qui nomen eius crediderunt, ius dedit ut filii Dei essent nati, non ex sanguine, neque voluntate carnis, neque voluntatis hominis, sed Dei.14 Et verbum factum est caro et habitavit in nobis, et vidimus gloriam eius, gloriam sicut unici Filii a Patre, plena gratia et veritate. 15 (Iohannes testimonium perhibuit de eo, et exclamavit, “Hic erat de quo dixi, ‘Qui venit post me ante me, quia erat ante me.’”) 16 Nam a plenitudine sua omnes recepimus gratiam in gratiam. 17 Lex enim per Moysen data est; gratia et veritas per Jesum Christum. 18 Nemo umquam Deum vidit; Deus unicus Filius, qui est in latere Patris, eum notum fecit.
+      </div>
+
+
+
+
+Style definitions below are in hierarchial order (Specificity)
+    - Specificity is not math — it's a priority triad (A,B,C).
+    - Compare each level: #ID (A) > .Class (B) > <Element> (C).
+    - Example: #header .text p = (1,1,1) beats .text p = (0,1,1).
+
+     -or-
+    
+    element{} < .class < #id < inline < !important
+    
+    Think in power levels:
+      body / p / div    → weak
+      .class            → medium
+      #id               → strong
+      style=""          → very strong
+      !important        → unstoppable
+    
+      Or in intent:
+      Elements → broad defaults
+      Classes → reusable styling
+      IDs → unique structure or JS targeting
+     
+	-->
+
+<!-- W3SCHOOLS BLANK TEMPLATE BELOW -- 
+<!doctype html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+
+        <title>Blank template</title>
+
+        <!-- Load external CSS styles --><!--
+        <link rel="stylesheet" href="styles.css">
+
+    </head>
+
+    <body>
+
+        <h1>My awesome space</h1>
+        
+        <!-- Load external JavaScript --><!--
+        <script src="scripts.js"></script>
+        
+    </body>
+
+</html>-->

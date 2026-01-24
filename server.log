@@ -1,0 +1,234 @@
+127.0.0.1 - - [24/Jan/2026 11:42:52] "GET / HTTP/1.1" 304 -
+127.0.0.1 - - [24/Jan/2026 11:42:52] "GET /data/weather.json?t=1769217162892 HTTP/1.1" 200 -
+127.0.0.1 - - [24/Jan/2026 11:42:52] code 404, message File not found
+127.0.0.1 - - [24/Jan/2026 11:42:52] "GET /4cast/assets/aptosBold.ttf HTTP/1.1" 404 -
+127.0.0.1 - - [24/Jan/2026 11:42:52] code 404, message File not found
+127.0.0.1 - - [24/Jan/2026 11:42:52] "GET /4cast/assets/aptos.ttf HTTP/1.1" 404 -
+127.0.0.1 - - [24/Jan/2026 11:43:46] "GET / HTTP/1.1" 304 -
+127.0.0.1 - - [24/Jan/2026 11:43:46] "GET /data/weather.json?t=1769217216728 HTTP/1.1" 200 -
+127.0.0.1 - - [24/Jan/2026 11:43:46] code 404, message File not found
+127.0.0.1 - - [24/Jan/2026 11:43:46] "GET /4cast/assets/aptos.ttf HTTP/1.1" 404 -
+127.0.0.1 - - [24/Jan/2026 11:43:46] code 404, message File not found
+127.0.0.1 - - [24/Jan/2026 11:43:46] "GET /4cast/assets/aptosBold.ttf HTTP/1.1" 404 -
+127.0.0.1 - - [24/Jan/2026 11:43:47] "GET / HTTP/1.1" 304 -
+127.0.0.1 - - [24/Jan/2026 11:43:47] "GET /data/weather.json?t=1769217217528 HTTP/1.1" 200 -
+127.0.0.1 - - [24/Jan/2026 11:43:47] code 404, message File not found
+127.0.0.1 - - [24/Jan/2026 11:43:47] "GET /4cast/assets/aptosBold.ttf HTTP/1.1" 404 -
+127.0.0.1 - - [24/Jan/2026 11:43:47] code 404, message File not found
+127.0.0.1 - - [24/Jan/2026 11:43:47] "GET /4cast/assets/aptos.ttf HTTP/1.1" 404 -
+127.0.0.1 - - [24/Jan/2026 11:43:59] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [24/Jan/2026 11:43:59] "GET /data/weather.json?t=1769217229663 HTTP/1.1" 200 -
+127.0.0.1 - - [24/Jan/2026 11:43:59] code 404, message File not found
+127.0.0.1 - - [24/Jan/2026 11:43:59] "GET /4cast/assets/aptosBold.ttf HTTP/1.1" 404 -
+127.0.0.1 - - [24/Jan/2026 11:43:59] code 404, message File not found
+127.0.0.1 - - [24/Jan/2026 11:43:59] "GET /4cast/assets/aptos.ttf HTTP/1.1" 404 -
+127.0.0.1 - - [24/Jan/2026 11:44:46] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [24/Jan/2026 11:44:47] "GET /data/weather.json?t=1769217277020 HTTP/1.1" 200 -
+127.0.0.1 - - [24/Jan/2026 11:44:47] code 404, message File not found
+127.0.0.1 - - [24/Jan/2026 11:44:47] "GET /4cast/assets/aptos.ttf HTTP/1.1" 404 -
+127.0.0.1 - - [24/Jan/2026 11:44:47] code 404, message File not found
+127.0.0.1 - - [24/Jan/2026 11:44:47] "GET /4cast/assets/aptosBold.ttf HTTP/1.1" 404 -
+127.0.0.1 - - [24/Jan/2026 11:49:19] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [24/Jan/2026 11:49:19] "GET /data/weather.json?t=1769217549247 HTTP/1.1" 200 -
+127.0.0.1 - - [24/Jan/2026 11:49:19] code 404, message File not found
+127.0.0.1 - - [24/Jan/2026 11:49:19] "GET /4cast/assets/aptosBold.ttf HTTP/1.1" 404 -
+127.0.0.1 - - [24/Jan/2026 11:49:19] code 404, message File not found
+127.0.0.1 - - [24/Jan/2026 11:49:19] "GET /4cast/assets/aptos.ttf HTTP/1.1" 404 -
+127.0.0.1 - - [24/Jan/2026 11:50:16] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [24/Jan/2026 11:50:17] "GET /data/weather.json?t=1769217607053 HTTP/1.1" 200 -
+127.0.0.1 - - [24/Jan/2026 11:50:17] code 404, message File not found
+127.0.0.1 - - [24/Jan/2026 11:50:17] "GET /4cast/assets/aptosBold.ttf HTTP/1.1" 404 -
+127.0.0.1 - - [24/Jan/2026 11:50:17] code 404, message File not found
+127.0.0.1 - - [24/Jan/2026 11:50:17] "GET /4cast/assets/aptos.ttf HTTP/1.1" 404 -
+127.0.0.1 - - [24/Jan/2026 11:51:44] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [24/Jan/2026 11:51:44] "GET /data/weather.json?t=1769217694368 HTTP/1.1" 200 -
+127.0.0.1 - - [24/Jan/2026 11:51:44] code 404, message File not found
+127.0.0.1 - - [24/Jan/2026 11:51:44] "GET /4cast/assets/aptosBold.ttf HTTP/1.1" 404 -
+127.0.0.1 - - [24/Jan/2026 11:51:44] code 404, message File not found
+127.0.0.1 - - [24/Jan/2026 11:51:44] "GET /4cast/assets/aptos.ttf HTTP/1.1" 404 -
+127.0.0.1 - - [24/Jan/2026 11:52:08] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [24/Jan/2026 11:52:08] "GET /data/weather.json?t=1769217718290 HTTP/1.1" 200 -
+127.0.0.1 - - [24/Jan/2026 11:52:08] code 404, message File not found
+127.0.0.1 - - [24/Jan/2026 11:52:08] "GET /4cast/assets/aptos.ttf HTTP/1.1" 404 -
+127.0.0.1 - - [24/Jan/2026 11:52:08] code 404, message File not found
+127.0.0.1 - - [24/Jan/2026 11:52:08] "GET /4cast/assets/aptosBold.ttf HTTP/1.1" 404 -
+127.0.0.1 - - [24/Jan/2026 11:55:16] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [24/Jan/2026 11:55:16] "GET /data/weather.json?t=1769217906555 HTTP/1.1" 200 -
+127.0.0.1 - - [24/Jan/2026 11:55:16] code 404, message File not found
+127.0.0.1 - - [24/Jan/2026 11:55:16] "GET /4cast/assets/aptosBold.ttf HTTP/1.1" 404 -
+127.0.0.1 - - [24/Jan/2026 11:55:16] code 404, message File not found
+127.0.0.1 - - [24/Jan/2026 11:55:16] "GET /4cast/assets/aptos.ttf HTTP/1.1" 404 -
+127.0.0.1 - - [24/Jan/2026 11:56:56] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [24/Jan/2026 11:56:56] "GET /data/weather.json?t=1769218006471 HTTP/1.1" 200 -
+127.0.0.1 - - [24/Jan/2026 11:56:56] code 404, message File not found
+127.0.0.1 - - [24/Jan/2026 11:56:56] "GET /4cast/assets/aptosBold.ttf HTTP/1.1" 404 -
+127.0.0.1 - - [24/Jan/2026 11:56:56] code 404, message File not found
+127.0.0.1 - - [24/Jan/2026 11:56:56] "GET /4cast/assets/aptos.ttf HTTP/1.1" 404 -
+127.0.0.1 - - [24/Jan/2026 11:58:49] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [24/Jan/2026 11:58:49] "GET /data/weather.json?t=1769218119617 HTTP/1.1" 200 -
+127.0.0.1 - - [24/Jan/2026 11:58:49] code 404, message File not found
+127.0.0.1 - - [24/Jan/2026 11:58:49] "GET /4cast/assets/aptosBold.ttf HTTP/1.1" 404 -
+127.0.0.1 - - [24/Jan/2026 11:58:49] code 404, message File not found
+127.0.0.1 - - [24/Jan/2026 11:58:49] "GET /4cast/assets/aptos.ttf HTTP/1.1" 404 -
+127.0.0.1 - - [24/Jan/2026 11:59:54] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [24/Jan/2026 11:59:54] "GET /data/weather.json?t=1769218184572 HTTP/1.1" 200 -
+127.0.0.1 - - [24/Jan/2026 11:59:54] code 404, message File not found
+127.0.0.1 - - [24/Jan/2026 11:59:54] "GET /4cast/assets/aptos.ttf HTTP/1.1" 404 -
+127.0.0.1 - - [24/Jan/2026 11:59:54] code 404, message File not found
+127.0.0.1 - - [24/Jan/2026 11:59:54] "GET /4cast/assets/aptosBold.ttf HTTP/1.1" 404 -
+127.0.0.1 - - [24/Jan/2026 12:00:09] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [24/Jan/2026 12:00:09] "GET /data/weather.json?t=1769218199631 HTTP/1.1" 200 -
+127.0.0.1 - - [24/Jan/2026 12:00:09] code 404, message File not found
+127.0.0.1 - - [24/Jan/2026 12:00:09] "GET /4cast/assets/aptos.ttf HTTP/1.1" 404 -
+127.0.0.1 - - [24/Jan/2026 12:00:09] code 404, message File not found
+127.0.0.1 - - [24/Jan/2026 12:00:09] "GET /4cast/assets/aptosBold.ttf HTTP/1.1" 404 -
+127.0.0.1 - - [24/Jan/2026 12:00:24] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [24/Jan/2026 12:00:24] "GET /data/weather.json?t=1769218214269 HTTP/1.1" 200 -
+127.0.0.1 - - [24/Jan/2026 12:00:24] code 404, message File not found
+127.0.0.1 - - [24/Jan/2026 12:00:24] "GET /4cast/assets/aptosBold.ttf HTTP/1.1" 404 -
+127.0.0.1 - - [24/Jan/2026 12:00:24] code 404, message File not found
+127.0.0.1 - - [24/Jan/2026 12:00:24] "GET /4cast/assets/aptos.ttf HTTP/1.1" 404 -
+127.0.0.1 - - [24/Jan/2026 12:04:30] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [24/Jan/2026 12:04:30] "GET /data/weather.json?t=1769218460902 HTTP/1.1" 200 -
+127.0.0.1 - - [24/Jan/2026 12:04:30] code 404, message File not found
+127.0.0.1 - - [24/Jan/2026 12:04:30] "GET /4cast/assets/aptosBold.ttf HTTP/1.1" 404 -
+127.0.0.1 - - [24/Jan/2026 12:04:30] code 404, message File not found
+127.0.0.1 - - [24/Jan/2026 12:04:30] "GET /4cast/assets/aptos.ttf HTTP/1.1" 404 -
+127.0.0.1 - - [24/Jan/2026 12:08:35] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [24/Jan/2026 12:08:35] "GET /data/weather.json?t=1769218705371 HTTP/1.1" 200 -
+127.0.0.1 - - [24/Jan/2026 12:08:35] code 404, message File not found
+127.0.0.1 - - [24/Jan/2026 12:08:35] "GET /4cast/assets/aptos.ttf HTTP/1.1" 404 -
+127.0.0.1 - - [24/Jan/2026 12:08:35] code 404, message File not found
+127.0.0.1 - - [24/Jan/2026 12:08:35] "GET /4cast/assets/aptosBold.ttf HTTP/1.1" 404 -
+127.0.0.1 - - [24/Jan/2026 12:08:50] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [24/Jan/2026 12:08:50] "GET /data/weather.json?t=1769218720556 HTTP/1.1" 200 -
+127.0.0.1 - - [24/Jan/2026 12:08:50] code 404, message File not found
+127.0.0.1 - - [24/Jan/2026 12:08:50] "GET /4cast/assets/aptos.ttf HTTP/1.1" 404 -
+127.0.0.1 - - [24/Jan/2026 12:08:50] code 404, message File not found
+127.0.0.1 - - [24/Jan/2026 12:08:50] "GET /4cast/assets/aptosBold.ttf HTTP/1.1" 404 -
+127.0.0.1 - - [24/Jan/2026 12:09:10] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [24/Jan/2026 12:09:10] "GET /data/weather.json?t=1769218740142 HTTP/1.1" 200 -
+127.0.0.1 - - [24/Jan/2026 12:09:10] code 404, message File not found
+127.0.0.1 - - [24/Jan/2026 12:09:10] "GET /4cast/assets/aptos.ttf HTTP/1.1" 404 -
+127.0.0.1 - - [24/Jan/2026 12:09:10] code 404, message File not found
+127.0.0.1 - - [24/Jan/2026 12:09:10] "GET /4cast/assets/aptosBold.ttf HTTP/1.1" 404 -
+127.0.0.1 - - [24/Jan/2026 12:11:06] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [24/Jan/2026 12:11:06] "GET /data/weather.json?t=1769218856645 HTTP/1.1" 200 -
+127.0.0.1 - - [24/Jan/2026 12:11:06] code 404, message File not found
+127.0.0.1 - - [24/Jan/2026 12:11:06] "GET /4cast/assets/aptosBold.ttf HTTP/1.1" 404 -
+127.0.0.1 - - [24/Jan/2026 12:11:06] code 404, message File not found
+127.0.0.1 - - [24/Jan/2026 12:11:06] "GET /4cast/assets/aptos.ttf HTTP/1.1" 404 -
+127.0.0.1 - - [24/Jan/2026 12:11:19] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [24/Jan/2026 12:11:19] "GET /data/weather.json?t=1769218869940 HTTP/1.1" 200 -
+127.0.0.1 - - [24/Jan/2026 12:11:19] code 404, message File not found
+127.0.0.1 - - [24/Jan/2026 12:11:19] "GET /4cast/assets/aptos.ttf HTTP/1.1" 404 -
+127.0.0.1 - - [24/Jan/2026 12:11:19] code 404, message File not found
+127.0.0.1 - - [24/Jan/2026 12:11:19] "GET /4cast/assets/aptosBold.ttf HTTP/1.1" 404 -
+127.0.0.1 - - [24/Jan/2026 12:11:30] "GET / HTTP/1.1" 304 -
+127.0.0.1 - - [24/Jan/2026 12:11:30] "GET /data/weather.json?t=1769218880200 HTTP/1.1" 200 -
+127.0.0.1 - - [24/Jan/2026 12:11:30] code 404, message File not found
+127.0.0.1 - - [24/Jan/2026 12:11:30] "GET /4cast/assets/aptos.ttf HTTP/1.1" 404 -
+127.0.0.1 - - [24/Jan/2026 12:11:30] code 404, message File not found
+127.0.0.1 - - [24/Jan/2026 12:11:30] "GET /4cast/assets/aptosBold.ttf HTTP/1.1" 404 -
+127.0.0.1 - - [24/Jan/2026 12:11:37] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [24/Jan/2026 12:11:37] "GET /data/weather.json?t=1769218887357 HTTP/1.1" 200 -
+127.0.0.1 - - [24/Jan/2026 12:11:37] code 404, message File not found
+127.0.0.1 - - [24/Jan/2026 12:11:37] "GET /4cast/assets/aptosBold.ttf HTTP/1.1" 404 -
+127.0.0.1 - - [24/Jan/2026 12:11:37] code 404, message File not found
+127.0.0.1 - - [24/Jan/2026 12:11:37] "GET /4cast/assets/aptos.ttf HTTP/1.1" 404 -
+127.0.0.1 - - [24/Jan/2026 12:11:49] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [24/Jan/2026 12:11:49] "GET /data/weather.json?t=1769218899701 HTTP/1.1" 200 -
+127.0.0.1 - - [24/Jan/2026 12:11:49] code 404, message File not found
+127.0.0.1 - - [24/Jan/2026 12:11:49] "GET /4cast/assets/aptos.ttf HTTP/1.1" 404 -
+127.0.0.1 - - [24/Jan/2026 12:11:49] code 404, message File not found
+127.0.0.1 - - [24/Jan/2026 12:11:49] "GET /4cast/assets/aptosBold.ttf HTTP/1.1" 404 -
+127.0.0.1 - - [24/Jan/2026 12:12:02] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [24/Jan/2026 12:12:02] "GET /data/weather.json?t=1769218912936 HTTP/1.1" 200 -
+127.0.0.1 - - [24/Jan/2026 12:12:02] code 404, message File not found
+127.0.0.1 - - [24/Jan/2026 12:12:02] "GET /4cast/assets/aptosBold.ttf HTTP/1.1" 404 -
+127.0.0.1 - - [24/Jan/2026 12:12:02] code 404, message File not found
+127.0.0.1 - - [24/Jan/2026 12:12:02] "GET /4cast/assets/aptos.ttf HTTP/1.1" 404 -
+127.0.0.1 - - [24/Jan/2026 12:14:55] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [24/Jan/2026 12:14:55] "GET /data/weather.json?t=1769219085258 HTTP/1.1" 200 -
+127.0.0.1 - - [24/Jan/2026 12:14:55] code 404, message File not found
+127.0.0.1 - - [24/Jan/2026 12:14:55] "GET /4cast/assets/aptosBold.ttf HTTP/1.1" 404 -
+127.0.0.1 - - [24/Jan/2026 12:14:55] code 404, message File not found
+127.0.0.1 - - [24/Jan/2026 12:14:55] "GET /4cast/assets/aptos.ttf HTTP/1.1" 404 -
+127.0.0.1 - - [24/Jan/2026 12:15:15] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [24/Jan/2026 12:15:15] "GET /data/weather.json?t=1769219105977 HTTP/1.1" 200 -
+127.0.0.1 - - [24/Jan/2026 12:15:15] code 404, message File not found
+127.0.0.1 - - [24/Jan/2026 12:15:15] "GET /4cast/assets/aptosBold.ttf HTTP/1.1" 404 -
+127.0.0.1 - - [24/Jan/2026 12:15:15] code 404, message File not found
+127.0.0.1 - - [24/Jan/2026 12:15:15] "GET /4cast/assets/aptos.ttf HTTP/1.1" 404 -
+127.0.0.1 - - [24/Jan/2026 12:15:42] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [24/Jan/2026 12:15:42] code 404, message File not found
+127.0.0.1 - - [24/Jan/2026 12:15:42] "GET /4cast/assets/aptos.ttf HTTP/1.1" 404 -
+127.0.0.1 - - [24/Jan/2026 12:15:42] "GET /data/weather.json?t=1769219132144 HTTP/1.1" 200 -
+127.0.0.1 - - [24/Jan/2026 12:15:42] code 404, message File not found
+127.0.0.1 - - [24/Jan/2026 12:15:42] "GET /4cast/assets/aptosBold.ttf HTTP/1.1" 404 -
+127.0.0.1 - - [24/Jan/2026 12:16:05] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [24/Jan/2026 12:16:05] "GET /data/weather.json?t=1769219155525 HTTP/1.1" 200 -
+127.0.0.1 - - [24/Jan/2026 12:16:05] code 404, message File not found
+127.0.0.1 - - [24/Jan/2026 12:16:05] "GET /4cast/assets/aptosBold.ttf HTTP/1.1" 404 -
+127.0.0.1 - - [24/Jan/2026 12:16:05] code 404, message File not found
+127.0.0.1 - - [24/Jan/2026 12:16:05] "GET /4cast/assets/aptos.ttf HTTP/1.1" 404 -
+127.0.0.1 - - [24/Jan/2026 12:16:17] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [24/Jan/2026 12:16:18] code 404, message File not found
+127.0.0.1 - - [24/Jan/2026 12:16:18] "GET /4cast/assets/aptosBold.ttf HTTP/1.1" 404 -
+127.0.0.1 - - [24/Jan/2026 12:16:18] "GET /data/weather.json?t=1769219168034 HTTP/1.1" 200 -
+127.0.0.1 - - [24/Jan/2026 12:16:18] code 404, message File not found
+127.0.0.1 - - [24/Jan/2026 12:16:18] "GET /4cast/assets/aptos.ttf HTTP/1.1" 404 -
+127.0.0.1 - - [24/Jan/2026 12:16:35] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [24/Jan/2026 12:16:35] "GET /data/weather.json?t=1769219185365 HTTP/1.1" 200 -
+127.0.0.1 - - [24/Jan/2026 12:16:35] code 404, message File not found
+127.0.0.1 - - [24/Jan/2026 12:16:35] "GET /4cast/assets/aptos.ttf HTTP/1.1" 404 -
+127.0.0.1 - - [24/Jan/2026 12:16:35] code 404, message File not found
+127.0.0.1 - - [24/Jan/2026 12:16:35] "GET /4cast/assets/aptosBold.ttf HTTP/1.1" 404 -
+127.0.0.1 - - [24/Jan/2026 12:17:32] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [24/Jan/2026 12:17:32] "GET /data/weather.json?t=1769219242444 HTTP/1.1" 200 -
+127.0.0.1 - - [24/Jan/2026 12:17:32] code 404, message File not found
+127.0.0.1 - - [24/Jan/2026 12:17:32] "GET /4cast/assets/aptos.ttf HTTP/1.1" 404 -
+127.0.0.1 - - [24/Jan/2026 12:17:32] code 404, message File not found
+127.0.0.1 - - [24/Jan/2026 12:17:32] "GET /4cast/assets/aptosBold.ttf HTTP/1.1" 404 -
+127.0.0.1 - - [24/Jan/2026 12:17:58] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [24/Jan/2026 12:17:58] "GET /data/weather.json?t=1769219268198 HTTP/1.1" 200 -
+127.0.0.1 - - [24/Jan/2026 12:17:58] code 404, message File not found
+127.0.0.1 - - [24/Jan/2026 12:17:58] "GET /4cast/assets/aptos.ttf HTTP/1.1" 404 -
+127.0.0.1 - - [24/Jan/2026 12:17:58] code 404, message File not found
+127.0.0.1 - - [24/Jan/2026 12:17:58] "GET /4cast/assets/aptosBold.ttf HTTP/1.1" 404 -
+127.0.0.1 - - [24/Jan/2026 12:18:16] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [24/Jan/2026 12:18:16] "GET /data/weather.json?t=1769219286383 HTTP/1.1" 200 -
+127.0.0.1 - - [24/Jan/2026 12:18:16] code 404, message File not found
+127.0.0.1 - - [24/Jan/2026 12:18:16] "GET /4cast/assets/aptosBold.ttf HTTP/1.1" 404 -
+127.0.0.1 - - [24/Jan/2026 12:18:16] code 404, message File not found
+127.0.0.1 - - [24/Jan/2026 12:18:16] "GET /4cast/assets/aptos.ttf HTTP/1.1" 404 -
+127.0.0.1 - - [24/Jan/2026 12:18:43] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [24/Jan/2026 12:18:43] "GET /data/weather.json?t=1769219313808 HTTP/1.1" 200 -
+127.0.0.1 - - [24/Jan/2026 12:18:43] code 404, message File not found
+127.0.0.1 - - [24/Jan/2026 12:18:43] "GET /4cast/assets/aptosBold.ttf HTTP/1.1" 404 -
+127.0.0.1 - - [24/Jan/2026 12:18:43] code 404, message File not found
+127.0.0.1 - - [24/Jan/2026 12:18:43] "GET /4cast/assets/aptos.ttf HTTP/1.1" 404 -
+127.0.0.1 - - [24/Jan/2026 12:18:58] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [24/Jan/2026 12:18:58] "GET /data/weather.json?t=1769219328266 HTTP/1.1" 200 -
+127.0.0.1 - - [24/Jan/2026 12:18:58] code 404, message File not found
+127.0.0.1 - - [24/Jan/2026 12:18:58] "GET /4cast/assets/aptosBold.ttf HTTP/1.1" 404 -
+127.0.0.1 - - [24/Jan/2026 12:18:58] code 404, message File not found
+127.0.0.1 - - [24/Jan/2026 12:18:58] "GET /4cast/assets/aptos.ttf HTTP/1.1" 404 -
+127.0.0.1 - - [24/Jan/2026 12:21:27] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [24/Jan/2026 12:21:27] "GET /data/weather.json?t=1769219477831 HTTP/1.1" 200 -
+127.0.0.1 - - [24/Jan/2026 12:21:27] code 404, message File not found
+127.0.0.1 - - [24/Jan/2026 12:21:27] "GET /4cast/assets/aptosBold.ttf HTTP/1.1" 404 -
+127.0.0.1 - - [24/Jan/2026 12:21:27] code 404, message File not found
+127.0.0.1 - - [24/Jan/2026 12:21:27] "GET /4cast/assets/aptos.ttf HTTP/1.1" 404 -
+127.0.0.1 - - [24/Jan/2026 12:21:43] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [24/Jan/2026 12:21:44] "GET /data/weather.json?t=1769219494124 HTTP/1.1" 200 -
+127.0.0.1 - - [24/Jan/2026 12:21:44] code 404, message File not found
+127.0.0.1 - - [24/Jan/2026 12:21:44] "GET /4cast/assets/aptosBold.ttf HTTP/1.1" 404 -
+127.0.0.1 - - [24/Jan/2026 12:21:44] code 404, message File not found
+127.0.0.1 - - [24/Jan/2026 12:21:44] "GET /4cast/assets/aptos.ttf HTTP/1.1" 404 -
+127.0.0.1 - - [24/Jan/2026 12:21:56] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [24/Jan/2026 12:21:56] "GET /data/weather.json?t=1769219506504 HTTP/1.1" 200 -
+127.0.0.1 - - [24/Jan/2026 12:21:56] code 404, message File not found
+127.0.0.1 - - [24/Jan/2026 12:21:56] "GET /4cast/assets/aptosBold.ttf HTTP/1.1" 404 -
+127.0.0.1 - - [24/Jan/2026 12:21:56] code 404, message File not found
+127.0.0.1 - - [24/Jan/2026 12:21:56] "GET /4cast/assets/aptos.ttf HTTP/1.1" 404 -

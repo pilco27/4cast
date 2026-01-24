@@ -11,6 +11,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/weather-icons.css">
 
   <style>
     * { margin:0; padding:0; box-sizing:border-box; }
@@ -116,7 +117,7 @@
   <div id="scroll">
     <!-- CURRENT WEATHER -->
     <div id="current">
-      <div id="icon" class="icon">☀️</div>
+      <div id="forecast-day0-icon" class="icon">☀️</div>
       <div id="today">Loading date...</div>
       <div id="tempObs">Loading...</div>
       <div id="forecast-day0-cloud" class="precis">Loading...</div>
@@ -192,7 +193,106 @@
     <hr>
   </div>
 
+
 <script>
+
+/* --- helpers & mappings --- */
+
+function normalizePrecis(text) {
+  return text
+    .toLowerCase()
+    .replace(/\./g, "")
+    .trim();
+}
+
+const PRECIS_ICON_MAP = [
+  // --- VERY SPECIFIC PHRASES FIRST ---
+
+{ match: ["evening showers"],     icon: "wi-night-alt-showers" },
+{ match: ["showers increasing"],  icon: "wi-showers" },
+{ match: ["showers easing"],      icon: "wi-sleet" },
+{ match: ["shower or two"],       icon: "wi-showers" },
+
+{ match: ["rain developing"],     icon: "wi-rain" },
+{ match: ["rain clearing"],       icon: "wi-rain" },
+{ match: ["rain easing"],         icon: "wi-rain" },
+
+{ match: ["cloud increasing"],    icon: "wi-day-cloudy" },
+
+{ match: ["mostly sunny"],        icon: "wi-day-sunny-overcast" },
+{ match: ["mostly cloudy"],       icon: "wi-day-cloudy" },
+{ match: ["partly cloudy"],       icon: "wi-day-cloudy" },
+
+{ match: ["mostly clear"],        icon: "wi-night-alt-partly-cloudy" },
+{ match: ["fog clearing"],        icon: "wi-day-haze" },
+{ match: ["patchy fog"],          icon: "wi-cloudy-windy" },
+
+{ match: ["smoke haze"],          icon: "wi-smoke" },
+{ match: ["dust storm"],          icon: "wi-dust" },
+
+{ match: ["very windy"],          icon: "wi-strong-wind" },
+{ match: ["wind easing"],         icon: "wi-dust" },
+
+// --- GENERAL WEATHER CONDITIONS ---
+
+{ match: ["thunderstorms"],       icon: "wi-day-snow-thunderstorm" },
+{ match: ["showers"],             icon: "wi-rain-mix" },
+{ match: ["drizzle"],             icon: "wi-sleet" },
+{ match: ["rain"],                icon: "wi-rain" },
+
+{ match: ["hail"],                icon: "wi-hail" },
+
+{ match: ["cloudy"],              icon: "wi-cloudy" },
+{ match: ["sunny"],               icon: "wi-day-sunny" },
+
+{ match: ["clearing"],            icon: "wi-night-alt-partly-cloudy" },
+{ match: ["clear"],               icon: "wi-night-clear" },
+
+{ match: ["gusty"],               icon: "wi-strong-wind" },
+{ match: ["windy"],               icon: "wi-windy" },
+
+{ match: ["fog"],                 icon: "wi-fog" },
+{ match: ["haze"],                icon: "wi-day-haze" },
+
+// --- TEMPERATURE / SECONDARY QUALIFIERS ---
+
+{ match: ["icy"],                 icon: "wi-snowflake-cold" },
+{ match: ["frost"],               icon: "wi-snowflake-cold" },
+{ match: ["cold"],                icon: "wi-snowflake-cold" },
+
+{ match: ["hot"],                 icon: "wi-hot" },
+{ match: ["warm"],                icon: "wi-day-sunny" },
+{ match: ["cool"],                icon: "wi-day-cloudy" },
+
+];
+
+const BOM_ICON_FALLBACK = {
+  1: "wi-day-sunny",
+  2: "wi-day-cloudy",
+  3: "wi-cloudy",
+  9: "wi-strong-wind"
+};
+
+/* --- icon resolver --- */
+
+function getIcon(iconCode, precis) {
+  if (precis) {
+    const text = normalizePrecis(precis);
+
+    for (const rule of PRECIS_ICON_MAP) {
+      if (rule.match.some(k => text.includes(k))) {
+        return `<i class="wi ${rule.icon}"></i>`;
+      }
+    }
+  }
+
+  if (iconCode && BOM_ICON_FALLBACK[iconCode]) {
+    return `<i class="wi ${BOM_ICON_FALLBACK[iconCode]}"></i>`;
+  }
+
+  return `<i class="wi wi-na"></i>`;
+}
+
 async function loadWeather() {
   try {
     const res = await fetch("data/weather.json?t=" + new Date().getTime());
@@ -230,8 +330,8 @@ async function loadWeather() {
 
       if (minElem) minElem.textContent = day.temp_min ?? "--";
       if (maxElem) maxElem.textContent = day.temp_max ?? "--";
-      if (cloudElem) cloudElem.textContent = day.precis;
-      if (iconElem) iconElem.innerHTML = getIcon(day.icon);
+      if (cloudElem) cloudElem.textContent = day.precis.replace(/\.$/, "");
+      if (iconElem) iconElem.innerHTML = getIcon(day.icon, day.precis);
 
     });
 
@@ -240,14 +340,12 @@ async function loadWeather() {
   }
 }
 
-// Simple icon mapping, expand to your full set
-function getIcon(code) {
-  const icons = { 1: "☀️", 2: "🌤️", 3: "⛅", 9: "🌬️" };
-  return icons[code] || "❓";
-}
+
 
 loadWeather();
 </script>
-
 </body>
+
+
+
 </html>

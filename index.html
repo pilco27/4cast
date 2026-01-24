@@ -30,70 +30,77 @@
 
     #location { text-align:right; align-self:end; font-family:aptosBold; font-size:clamp(0.1rem,5vw,10rem);} 
 
-    #scroll { margin-top: clamp(5rem,17vw,15rem); }
+    #scroll {
+      padding-top: clamp(5rem,15vw,15rem); /* Blank space to allow for header */
+      min-height: 100vh; background: linear-gradient(to bottom, cornflowerblue, white); /* responsive Sky Colour */
+    }
 
     #current {
       display:grid;
-      grid-template-columns:1fr 2.75fr 1.25fr 0.5fr;
+      grid-template-columns:12vw 2fr 1.5fr 9vw 9vw;
       font-size:clamp(0.1rem,4vw,10rem);
       white-space:nowrap;
-      padding:0vh 5vw 1vh 0vw;
+      padding:0.334vh 3vw;
     }
 
-    #current > div:nth-child(1) { grid-column:1; grid-row:1 / span 3; }
-    #current > div:nth-child(2) { grid-column:2; grid-row:1; }
+    #current > .icon { grid-column:1; grid-row:1 / span 3; }
+    #current > .today { grid-column:2; grid-row:1; }
     #current > div:nth-child(3) { grid-column:2; grid-row:2; }
-    #current > div:nth-child(4) { grid-column:2; grid-row:3; }
+    #current > .precis { grid-column:2 / span 2; grid-row:3; }
     #current > div:nth-child(5) { grid-column:3; grid-row:2; }
-    #current > div:nth-child(6) { grid-column:3; grid-row:3; }
-    #current > div:nth-child(7) { grid-column:4; grid-row:2; }
-    #current > div:nth-child(8) { grid-column:5; grid-row:2; }
+    #current > .feels { grid-column:3; grid-row:1; }
+    #current > div:nth-child(7) { grid-column:4; grid-row:1 / span 3; }
+    #current > div:nth-child(8) { grid-column:5; grid-row:1 / span 3; }
 
     .forecast-day {
       display: grid;
-      grid-template-columns: 1fr 3fr 0.5fr 0.5fr;
+      grid-template-columns: 12vw 3fr 9vw 9vw;
       font-size: clamp(0.1rem, 4vw, 10rem);
       white-space: nowrap;
-      padding: 0.5vh 5vw 1vh 0.5vw;
+      padding:0.334vh 3vw;
     }
 
-    .forecast-day > .icon { grid-column: 1; grid-row: 1 / span 3; }
+    .forecast-day > .icon { grid-column: 1; grid-row: 1 / span 2; }
     .forecast-day > .date { grid-column: 2; grid-row: 1; }
     .forecast-day > .precis { grid-column: 2; grid-row: 2; }
-    .forecast-day > .min-temp { grid-column: 3; grid-row: 1; }
-    .forecast-day > .max-temp { grid-column: 4; grid-row: 1; }
+    .forecast-day > .min-temp { grid-column: 3; grid-row: 1 / span 2; }
+    .forecast-day > .max-temp { grid-column: 4; grid-row: 1 / span 2; }
 
 
-    .icon { font-size:clamp(0.1rem,10vw,10rem); align-self:center; padding-right:1vw; }
+    .icon { font-size:clamp(0.1rem,7.5vw,10rem); align-self:center; }
 
     .update { font-size:clamp(0.1rem,2vw,10rem); text-align:right; color:#555; }
-    .feels { font-size:clamp(0.1rem,2vw,10rem); text-align:left; color:#555; }
+    .feels { font-size:clamp(0.1rem,2vw,10rem); text-align:left; color:#555; align-self: end;} /* "end" = bottom-align within this grid row */
 
     #tempObs { font-size:clamp(0.1rem,5vw,10rem); font-weight:bold; }
     #tempApp { font-size:clamp(0.1rem,4vw,10rem); font-weight:bold; }
 
     .min-temp {
       background-color: cornflowerblue;
+      color: black;
       border-radius: 0.5pc 0 0 0.5pc;
       align-self: center;
       text-align: center;
       padding: 0.75vh;
-      margin-top: 2vw;
+      margin-top: 0vw;
     }
 
     .max-temp {
       background-color: red;
+      color: white;
       border-radius: 0 0.5pc 0.5pc 0;
       align-self: center;
       text-align: center;
       padding: 0.75vh;
-      margin-top: 2vw;
+      margin-top: 0vw;
     }
 
     .precis {
       font-size:clamp(0.1rem,3vw,10rem);
-      padding-left:0.25vw;
+      padding-left:1vw;
       color:#555;
+      white-space: normal;       /* allow wrapping */
+      word-wrap: break-word;     /* wrap long words if needed */
     }
 
   </style>
@@ -112,11 +119,11 @@
       <div id="icon" class="icon">☀️</div>
       <div id="today">Loading date...</div>
       <div id="tempObs">Loading...</div>
-      <div id="forecast-day1-cloud" class="precis">Loading...</div>
+      <div id="forecast-day0-cloud" class="precis">Loading...</div>
       <div id="tempApp">Loading...</div>
       <div class="feels">Feels like</div>
-      <div id="forecast-day1-min" class="min-temp">--</div>
-      <div id="forecast-day1-max" class="max-temp">--</div>
+      <div id="forecast-day0-min" class="min-temp">--</div>
+      <div id="forecast-day0-max" class="max-temp">--</div>
     </div>
 
     <hr>
@@ -124,6 +131,16 @@
     <!-- FORECAST DAYS -->
     <div id="forecast-container">
       <!-- Repeat for 6 days -->
+      <div class="forecast-day" id="forecast-day1">
+        <div id="forecast-day1-icon" class="icon">☀️</div>
+        <div id="forecast-day1-date">Loading...</div>
+        <div id="forecast-day1-cloud" class="precis">Loading...</div>
+        <div id="forecast-day1-min" class="min-temp">--</div>
+        <div id="forecast-day1-max" class="max-temp">--</div>
+      </div>
+
+    <hr>
+
       <div class="forecast-day" id="forecast-day2">
         <div id="forecast-day2-icon" class="icon">☀️</div>
         <div id="forecast-day2-date">Loading...</div>
@@ -171,16 +188,6 @@
         <div id="forecast-day6-min" class="min-temp">--</div>
         <div id="forecast-day6-max" class="max-temp">--</div>
       </div>
-
-    <hr>
-
-      <div class="forecast-day" id="forecast-day7">
-        <div id="forecast-day7-icon" class="icon">☀️</div>
-        <div id="forecast-day7-date">Loading...</div>
-        <div id="forecast-day7-cloud" class="precis">Loading...</div>
-        <div id="forecast-day7-min" class="min-temp">--</div>
-        <div id="forecast-day7-max" class="max-temp">--</div>
-      </div>
     </div>
     <hr>
   </div>
@@ -196,25 +203,38 @@ async function loadWeather() {
     document.getElementById("tempObs").textContent = current.air_temp.toFixed(1) + "°C";
     document.getElementById("tempApp").textContent = current.apparent_temp.toFixed(1) + "°C";
     document.getElementById("updated").textContent =
-      "Updated: " + new Date(current.timestamp_local).toLocaleString();
+      "Updated: " + new Date(current.timestamp_local).toLocaleString('en-GB', {
+        day: '2-digit',
+        month: '2-digit',
+        year: 'numeric',
+        hour: '2-digit',
+        minute: '2-digit'
+      });   
     document.getElementById("today").textContent =
       new Date(current.timestamp_local).toLocaleDateString(undefined, { weekday: 'long', day:'numeric', month:'short' });
 
     // --- FORECAST ---
     data.forecast.forEach((day, i) => {
-      const dayIndex = i + 1; // 1-based
-      const dateElem = document.getElementById(`forecast-day${dayIndex}-date`);
-      const minElem  = document.getElementById(`forecast-day${dayIndex}-min`);
-      const maxElem  = document.getElementById(`forecast-day${dayIndex}-max`);
-      const cloudElem= document.getElementById(`forecast-day${dayIndex}-cloud`);
-      const iconElem = document.getElementById(`forecast-day${dayIndex}-icon`);
+      const dateElem  = document.getElementById(`forecast-day${i}-date`);
+      const minElem   = document.getElementById(`forecast-day${i}-min`);
+      const maxElem   = document.getElementById(`forecast-day${i}-max`);
+      const cloudElem = document.getElementById(`forecast-day${i}-cloud`);
+      const iconElem  = document.getElementById(`forecast-day${i}-icon`);
 
-      if(dateElem) dateElem.textContent = new Date(day.date).toLocaleDateString(undefined, { weekday: 'long', day:'numeric', month:'short' });
-      if(minElem) minElem.textContent = day.temp_min !== null ? day.temp_min + "°" : "-";
-      if(maxElem) maxElem.textContent = day.temp_max !== null ? day.temp_max + "°" : "-";
-      if(cloudElem) cloudElem.textContent = day.precis;
-      if(iconElem) iconElem.innerHTML = getIcon(day.icon);
+      if (dateElem) {
+        dateElem.textContent = new Date(day.date).toLocaleDateString(
+          undefined,
+          { weekday: 'long', day: 'numeric', month: 'short' }
+        );
+      }
+
+      if (minElem) minElem.textContent = day.temp_min ?? "--";
+      if (maxElem) maxElem.textContent = day.temp_max ?? "--";
+      if (cloudElem) cloudElem.textContent = day.precis;
+      if (iconElem) iconElem.innerHTML = getIcon(day.icon);
+
     });
+
   } catch(e) {
     console.error("Error loading weather:", e);
   }

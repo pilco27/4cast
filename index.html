@@ -132,7 +132,6 @@
 
     <!-- FORECAST DAYS -->
     <div id="forecast-container">
-      <!-- Repeat for 6 days -->
       <div class="forecast-day" id="forecast-day1">
         <div id="forecast-day1-icon" class="icon">--</div>
         <div id="forecast-day1-date">Loading...</div>
@@ -275,7 +274,6 @@ const BOM_ICON_FALLBACK = {
 };
 
 /* --- icon resolver --- */
-
 function getIcon(iconCode, precis) {
   if (precis) {
     const text = normalizePrecis(precis);
@@ -340,8 +338,6 @@ async function loadWeather() {
     console.error("Error loading weather:", e);
   }
 }
-
-
 
 loadWeather();
 </script>

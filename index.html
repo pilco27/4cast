@@ -38,13 +38,13 @@
 
     #current {
       display:grid;
-      grid-template-columns:12vw 2fr 1.5fr 9vw 9vw;
+      grid-template-columns:20vw 1.75fr 1.5fr 9vw 9vw;
       font-size:clamp(0.1rem,4vw,10rem);
       white-space:nowrap;
-      padding:0.334vh 3vw;
+      padding:1vh 3vw;
     }
 
-    #current > .icon { grid-column:1; grid-row:1 / span 3; }
+    #current > .iconCurrent { grid-column:1; grid-row:1 / span 3; }
     #current > .today { grid-column:2; grid-row:1; }
     #current > div:nth-child(3) { grid-column:2; grid-row:2; }
     #current > .precis { grid-column:2 / span 2; grid-row:3; }
@@ -55,10 +55,10 @@
 
     .forecast-day {
       display: grid;
-      grid-template-columns: 12vw 3fr 9vw 9vw;
+      grid-template-columns: 13vw 3fr 9vw 9vw;
       font-size: clamp(0.1rem, 4vw, 10rem);
       white-space: nowrap;
-      padding:0.334vh 3vw;
+      padding:1vh 3vw;
     }
 
     .forecast-day > .icon { grid-column: 1; grid-row: 1 / span 2; }
@@ -68,7 +68,8 @@
     .forecast-day > .max-temp { grid-column: 4; grid-row: 1 / span 2; }
 
 
-    .icon { font-size:clamp(0.1rem,7.5vw,10rem); align-self:center; }
+    .icon { font-size:clamp(0.1rem,7vw,10rem); align-self:center; padding-top:1.25vh; }
+    .iconCurrent { font-size:clamp(0.1rem,13vw,10rem); align-self:center; padding-top:1vh;}
 
     .update { font-size:clamp(0.1rem,2vw,10rem); text-align:right; color:#555; }
     .feels { font-size:clamp(0.1rem,2vw,10rem); text-align:left; color:#555; align-self: end;} /* "end" = bottom-align within this grid row */
@@ -117,7 +118,7 @@
   <div id="scroll">
     <!-- CURRENT WEATHER -->
     <div id="current">
-      <div id="forecast-day0-icon" class="icon">☀️</div>
+      <div id="forecast-day0-icon" class="iconCurrent">--</div>
       <div id="today">Loading date...</div>
       <div id="tempObs">Loading...</div>
       <div id="forecast-day0-cloud" class="precis">Loading...</div>
@@ -133,7 +134,7 @@
     <div id="forecast-container">
       <!-- Repeat for 6 days -->
       <div class="forecast-day" id="forecast-day1">
-        <div id="forecast-day1-icon" class="icon">☀️</div>
+        <div id="forecast-day1-icon" class="icon">--</div>
         <div id="forecast-day1-date">Loading...</div>
         <div id="forecast-day1-cloud" class="precis">Loading...</div>
         <div id="forecast-day1-min" class="min-temp">--</div>
@@ -143,7 +144,7 @@
     <hr>
 
       <div class="forecast-day" id="forecast-day2">
-        <div id="forecast-day2-icon" class="icon">☀️</div>
+        <div id="forecast-day2-icon" class="icon">--</div>
         <div id="forecast-day2-date">Loading...</div>
         <div id="forecast-day2-cloud" class="precis">Loading...</div>
         <div id="forecast-day2-min" class="min-temp">--</div>
@@ -153,7 +154,7 @@
     <hr>
 
       <div class="forecast-day" id="forecast-day3">
-        <div id="forecast-day3-icon" class="icon">☀️</div>
+        <div id="forecast-day3-icon" class="icon">--</div>
         <div id="forecast-day3-date">Loading...</div>
         <div id="forecast-day3-cloud" class="precis">Loading...</div>
         <div id="forecast-day3-min" class="min-temp">--</div>
@@ -163,7 +164,7 @@
     <hr>
 
       <div class="forecast-day" id="forecast-day4">
-        <div id="forecast-day4-icon" class="icon">☀️</div>
+        <div id="forecast-day4-icon" class="icon">--</div>
         <div id="forecast-day4-date">Loading...</div>
         <div id="forecast-day4-cloud" class="precis">Loading...</div>
         <div id="forecast-day4-min" class="min-temp">--</div>
@@ -173,7 +174,7 @@
     <hr>
 
       <div class="forecast-day" id="forecast-day5">
-        <div id="forecast-day5-icon" class="icon">☀️</div>
+        <div id="forecast-day5-icon" class="icon">--</div>
         <div id="forecast-day5-date">Loading...</div>
         <div id="forecast-day5-cloud" class="precis">Loading...</div>
         <div id="forecast-day5-min" class="min-temp">--</div>
@@ -183,7 +184,7 @@
     <hr>
 
       <div class="forecast-day" id="forecast-day6">
-        <div id="forecast-day6-icon" class="icon">☀️</div>
+        <div id="forecast-day6-icon" class="icon">--</div>
         <div id="forecast-day6-date">Loading...</div>
         <div id="forecast-day6-cloud" class="precis">Loading...</div>
         <div id="forecast-day6-min" class="min-temp">--</div>
@@ -223,7 +224,7 @@ const PRECIS_ICON_MAP = [
 { match: ["mostly cloudy"],       icon: "wi-day-cloudy" },
 { match: ["partly cloudy"],       icon: "wi-day-cloudy" },
 
-{ match: ["mostly clear"],        icon: "wi-night-alt-partly-cloudy" },
+{ match: ["mostly clear"],        icon: "wi-day-sunny-overcast" },
 { match: ["fog clearing"],        icon: "wi-day-haze" },
 { match: ["patchy fog"],          icon: "wi-cloudy-windy" },
 

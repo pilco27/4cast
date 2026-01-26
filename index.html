@@ -196,7 +196,99 @@
 
 <script>
 
-/* --- helpers & mappings --- */
+/* ============================================================
+   Day-of-Year Helper
+   ------------------------------------------------------------
+   Returns the day of the year (0–365), used for seasonal math
+   ============================================================ */
+function getDayOfYear(date = new Date()) {
+  const start = new Date(date.getFullYear(), 0, 0);
+  const diff =
+    date - start +
+    (start.getTimezoneOffset() - date.getTimezoneOffset()) * 60 * 1000;
+  return Math.floor(diff / (1000 * 60 * 60 * 24));
+}
+
+
+/* ============================================================
+   Approximate Sunset and Sunrise Times (Hours, 0–24)
+   ------------------------------------------------------------
+   Linearly interpolates between solstices for Southern Hemisphere
+   ============================================================ */
+
+function approximateSunsetHour(date = new Date()) {
+  const day = getDayOfYear(date);
+
+  // Approx solstice days (Southern Hemisphere)
+  const SUMMER_SOLSTICE = 355; // Dec 21
+  const WINTER_SOLSTICE = 172; // Jun 21
+
+  // Sunset times for Noarlunga-ish latitude
+  const SUMMER_SUNSET = 20.5; // 20:30
+  const WINTER_SUNSET = 17.25; // 17:15
+
+  let sunset;
+  if (day >= WINTER_SOLSTICE && day <= SUMMER_SOLSTICE) {
+    // Days between Winter → Summer solstice
+    sunset = WINTER_SUNSET + ((SUMMER_SUNSET - WINTER_SUNSET) * (day - WINTER_SOLSTICE)) / (SUMMER_SOLSTICE - WINTER_SOLSTICE);
+  } else {
+    // Days between Summer → next Winter solstice
+    const span = (365 - SUMMER_SOLSTICE) + WINTER_SOLSTICE; // wrap around year-end
+    const offset = day > SUMMER_SOLSTICE ? day - SUMMER_SOLSTICE : day + 365 - SUMMER_SOLSTICE;
+    sunset = SUMMER_SUNSET + ((WINTER_SUNSET - SUMMER_SUNSET) * offset) / span;
+  }
+  return sunset;
+}
+
+function approximateSunriseHour(date = new Date()) {
+  const day = getDayOfYear(date);
+
+  const SUMMER_SOLSTICE = 355;
+  const WINTER_SOLSTICE = 172;
+
+  const SUMMER_SUNRISE = 5.25; // 05:15
+  const WINTER_SUNRISE = 7.0;  // 07:00
+
+  let sunrise;
+  if (day >= WINTER_SOLSTICE && day <= SUMMER_SOLSTICE) {
+    sunrise = WINTER_SUNRISE + ((SUMMER_SUNRISE - WINTER_SUNRISE) * (day - WINTER_SOLSTICE)) / (SUMMER_SOLSTICE - WINTER_SOLSTICE);
+  } else {
+    const span = (365 - SUMMER_SOLSTICE) + WINTER_SOLSTICE;
+    const offset = day > SUMMER_SOLSTICE ? day - SUMMER_SOLSTICE : day + 365 - SUMMER_SOLSTICE;
+    sunrise = SUMMER_SUNRISE + ((WINTER_SUNRISE - SUMMER_SUNRISE) * offset) / span;
+  }
+  return sunrise;
+}
+
+
+
+
+/* ============================================================
+   Daylight Check
+   ------------------------------------------------------------
+   True if current local time is between sunrise and sunset
+   ============================================================ */
+function isDaylightNow() {
+  const now = new Date();
+  const currentHour = now.getHours() + now.getMinutes() / 60;
+
+  const sunrise = approximateSunriseHour(now);
+  const sunset  = approximateSunsetHour(now);
+
+  return currentHour >= sunrise && currentHour < sunset;
+}
+
+
+
+/* ============================================================
+   Example Usage (Icon Selection)
+   ------------------------------------------------------------
+   Switch between day/night icon variants safely across midnight
+   ============================================================ */
+function resolveDayNightIcon(dayIcon, nightIcon) {
+  return isDaylightNow() ? dayIcon : nightIcon;
+}
+
 
 function normalizePrecis(text) {
   return text
@@ -205,8 +297,15 @@ function normalizePrecis(text) {
     .trim();
 }
 
+const DAYLIGHT_ICON_OVERRIDES = {
+  "wi-night-clear": "wi-day-sunny",
+  "wi-night-alt-partly-cloudy": "wi-day-cloudy"
+};
+
+
 const PRECIS_ICON_MAP = [
   // --- VERY SPECIFIC PHRASES FIRST ---
+{ all:   ["windy", "sunny"],      icon: "wi-day-windy" },
 
 { match: ["evening showers"],     icon: "wi-night-alt-showers" },
 { match: ["showers increasing"],  icon: "wi-showers" },
@@ -275,22 +374,41 @@ const BOM_ICON_FALLBACK = {
 
 /* --- icon resolver --- */
 function getIcon(iconCode, precis) {
+  let chosenIcon = null;
+
   if (precis) {
     const text = normalizePrecis(precis);
 
     for (const rule of PRECIS_ICON_MAP) {
-      if (rule.match.some(k => text.includes(k))) {
-        return `<i class="wi ${rule.icon}"></i>`;
+
+      if (rule.all && rule.all.every(k => text.includes(k))) {
+        chosenIcon = rule.icon;
+        break;
+      }
+
+      if (rule.match && rule.match.some(k => text.includes(k))) {
+        chosenIcon = rule.icon;
+        break;
       }
     }
   }
 
-  if (iconCode && BOM_ICON_FALLBACK[iconCode]) {
-    return `<i class="wi ${BOM_ICON_FALLBACK[iconCode]}"></i>`;
+  if (!chosenIcon && iconCode && BOM_ICON_FALLBACK[iconCode]) {
+    chosenIcon = BOM_ICON_FALLBACK[iconCode];
   }
 
-  return `<i class="wi wi-na"></i>`;
+  if (!chosenIcon) {
+    chosenIcon = "wi-na";
+  }
+
+  // 🌞 DAYLIGHT OVERRIDE
+  if (isDaylightNow() && DAYLIGHT_ICON_OVERRIDES[chosenIcon]) {
+    chosenIcon = DAYLIGHT_ICON_OVERRIDES[chosenIcon];
+  }
+
+  return `<i class="wi ${chosenIcon}"></i>`;
 }
+
 
 async function loadWeather() {
   try {

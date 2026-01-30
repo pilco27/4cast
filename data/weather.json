@@ -1,13 +1,13 @@
 {
   "meta": {
     "station": "Noarlunga",
-    "generated_utc": "2026-01-30T22:35:03Z"
+    "generated_utc": "2026-01-30T22:50:04Z"
   },
   "current": {
-    "timestamp_utc": "2026-01-30T22:30:00+00:00",
-    "timestamp_local": "2026-01-31T09:00:00+10:30",
-    "air_temp": 28.6,
-    "apparent_temp": 27.5
+    "timestamp_utc": "2026-01-30T22:40:00+00:00",
+    "timestamp_local": "2026-01-31T09:10:00+10:30",
+    "air_temp": 27.0,
+    "apparent_temp": 25.7
   },
   "forecast": [
     {
@@ -36,8 +36,8 @@
     },
     {
       "date": "2026-02-03",
-      "temp_min": "14",
-      "temp_max": "30",
+      "temp_min": "15",
+      "temp_max": "31",
       "precis": "Sunny.",
       "icon": 1,
       "rain_probability": "0"
@@ -45,7 +45,7 @@
     {
       "date": "2026-02-04",
       "temp_min": "15",
-      "temp_max": "29",
+      "temp_max": "30",
       "precis": "Sunny.",
       "icon": 1,
       "rain_probability": "5"
@@ -53,7 +53,7 @@
     {
       "date": "2026-02-05",
       "temp_min": "16",
-      "temp_max": "28",
+      "temp_max": "27",
       "precis": "Mostly sunny.",
       "icon": 3,
       "rain_probability": "5"
@@ -61,7 +61,7 @@
     {
       "date": "2026-02-06",
       "temp_min": "14",
-      "temp_max": "30",
+      "temp_max": "29",
       "precis": "Sunny.",
       "icon": 1,
       "rain_probability": "5"

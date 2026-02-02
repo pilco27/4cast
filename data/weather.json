@@ -1,21 +1,21 @@
 {
   "meta": {
     "station": "Noarlunga",
-    "generated_utc": "2026-02-02T04:50:04Z"
+    "generated_utc": "2026-02-02T05:05:03Z"
   },
   "current": {
-    "timestamp_utc": "2026-02-02T04:40:00+00:00",
-    "timestamp_local": "2026-02-02T15:10:00+10:30",
-    "air_temp": 25.6,
-    "apparent_temp": 20.9
+    "timestamp_utc": "2026-02-02T05:00:00+00:00",
+    "timestamp_local": "2026-02-02T15:30:00+10:30",
+    "air_temp": 25.0,
+    "apparent_temp": 19.3
   },
   "forecast": [
     {
       "date": "2026-02-02",
       "temp_min": null,
-      "temp_max": "28",
-      "precis": "Sunny.",
-      "icon": 1,
+      "temp_max": null,
+      "precis": "Clear.",
+      "icon": 2,
       "rain_probability": "0"
     },
     {
@@ -32,12 +32,12 @@
       "temp_max": "31",
       "precis": "Sunny.",
       "icon": 1,
-      "rain_probability": "0"
+      "rain_probability": "5"
     },
     {
       "date": "2026-02-05",
       "temp_min": "16",
-      "temp_max": "28",
+      "temp_max": "29",
       "precis": "Cloud clearing.",
       "icon": 3,
       "rain_probability": "5"
@@ -61,9 +61,17 @@
     {
       "date": "2026-02-08",
       "temp_min": "16",
-      "temp_max": "31",
+      "temp_max": "30",
       "precis": "Mostly sunny.",
       "icon": 3,
+      "rain_probability": "20"
+    },
+    {
+      "date": "2026-02-09",
+      "temp_min": "17",
+      "temp_max": "30",
+      "precis": "Sunny.",
+      "icon": 1,
       "rain_probability": "20"
     }
   ]

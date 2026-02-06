@@ -1,13 +1,13 @@
 {
   "meta": {
     "station": "Noarlunga",
-    "generated_utc": "2026-02-06T15:20:10Z"
+    "generated_utc": "2026-02-06T15:35:09Z"
   },
   "current": {
-    "timestamp_utc": "2026-02-06T15:10:00+00:00",
-    "timestamp_local": "2026-02-07T01:40:00+10:30",
-    "air_temp": 16.9,
-    "apparent_temp": 13.9
+    "timestamp_utc": "2026-02-06T15:30:00+00:00",
+    "timestamp_local": "2026-02-07T02:00:00+10:30",
+    "air_temp": 16.5,
+    "apparent_temp": 13.1
   },
   "forecast": [
     {

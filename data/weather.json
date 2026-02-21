@@ -1,13 +1,13 @@
 {
   "meta": {
     "station": "Noarlunga",
-    "generated_utc": "2026-02-21T10:35:03Z"
+    "generated_utc": "2026-02-21T10:50:04Z"
   },
   "current": {
-    "timestamp_utc": "2026-02-21T10:30:00+00:00",
-    "timestamp_local": "2026-02-21T21:00:00+10:30",
+    "timestamp_utc": "2026-02-21T10:40:00+00:00",
+    "timestamp_local": "2026-02-21T21:10:00+10:30",
     "air_temp": 26.9,
-    "apparent_temp": 26.7
+    "apparent_temp": 26.0
   },
   "forecast": [
     {
@@ -16,15 +16,15 @@
       "temp_max": null,
       "precis": "Cloudy.",
       "icon": 4,
-      "rain_probability": "20"
+      "rain_probability": "10"
     },
     {
       "date": "2026-02-22",
       "temp_min": "21",
-      "temp_max": "27",
-      "precis": "Showers.",
+      "temp_max": "28",
+      "precis": "Shower or two clearing.",
       "icon": 11,
-      "rain_probability": "80"
+      "rain_probability": "60"
     },
     {
       "date": "2026-02-23",
@@ -37,42 +37,42 @@
     {
       "date": "2026-02-24",
       "temp_min": "16",
-      "temp_max": "28",
+      "temp_max": "27",
+      "precis": "Partly cloudy.",
+      "icon": 3,
+      "rain_probability": "5"
+    },
+    {
+      "date": "2026-02-25",
+      "temp_min": "16",
+      "temp_max": "27",
+      "precis": "Sunny.",
+      "icon": 1,
+      "rain_probability": "5"
+    },
+    {
+      "date": "2026-02-26",
+      "temp_min": "16",
+      "temp_max": "29",
       "precis": "Partly cloudy.",
       "icon": 3,
       "rain_probability": "10"
     },
     {
-      "date": "2026-02-25",
-      "temp_min": "16",
-      "temp_max": "26",
-      "precis": "Mostly sunny.",
-      "icon": 3,
-      "rain_probability": "5"
-    },
-    {
-      "date": "2026-02-26",
-      "temp_min": "15",
-      "temp_max": "28",
-      "precis": "Mostly sunny.",
-      "icon": 3,
-      "rain_probability": "5"
-    },
-    {
       "date": "2026-02-27",
-      "temp_min": "18",
-      "temp_max": "34",
-      "precis": "Partly cloudy.",
-      "icon": 3,
-      "rain_probability": "20"
+      "temp_min": "19",
+      "temp_max": "32",
+      "precis": "Possible shower.",
+      "icon": 17,
+      "rain_probability": "40"
     },
     {
       "date": "2026-02-28",
       "temp_min": "22",
       "temp_max": "31",
-      "precis": "Partly cloudy.",
-      "icon": 3,
-      "rain_probability": "30"
+      "precis": "Shower or two.",
+      "icon": 11,
+      "rain_probability": "50"
     }
   ]
 }

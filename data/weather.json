@@ -1,7 +1,7 @@
 {
   "meta": {
     "station": "Noarlunga",
-    "generated_utc": "2026-02-27T17:20:03Z"
+    "generated_utc": "2026-02-27T17:35:03Z"
   },
   "current": {
     "timestamp_utc": "2026-02-27T16:28:00+00:00",
@@ -11,16 +11,8 @@
   },
   "forecast": [
     {
-      "date": "2026-02-27",
-      "temp_min": null,
-      "temp_max": null,
-      "precis": "Partly cloudy.",
-      "icon": 3,
-      "rain_probability": "10"
-    },
-    {
       "date": "2026-02-28",
-      "temp_min": "22",
+      "temp_min": null,
       "temp_max": "26",
       "precis": "Rain. Possible storm.",
       "icon": 16,

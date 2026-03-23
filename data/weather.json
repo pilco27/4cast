@@ -1,13 +1,13 @@
 {
   "meta": {
     "station": "Noarlunga",
-    "generated_utc": "2026-03-23T10:35:09Z"
+    "generated_utc": "2026-03-23T10:50:09Z"
   },
   "current": {
-    "timestamp_utc": "2026-03-23T10:30:00+00:00",
-    "timestamp_local": "2026-03-23T21:00:00+10:30",
+    "timestamp_utc": "2026-03-23T10:40:00+00:00",
+    "timestamp_local": "2026-03-23T21:10:00+10:30",
     "air_temp": 25.6,
-    "apparent_temp": 25.1
+    "apparent_temp": 25.8
   },
   "forecast": [
     {
@@ -16,7 +16,7 @@
       "temp_max": null,
       "precis": "Clear.",
       "icon": 2,
-      "rain_probability": "5"
+      "rain_probability": "0"
     },
     {
       "date": "2026-03-24",
@@ -24,23 +24,23 @@
       "temp_max": "30",
       "precis": "Mostly sunny.",
       "icon": 3,
-      "rain_probability": "5"
+      "rain_probability": "10"
     },
     {
       "date": "2026-03-25",
-      "temp_min": "20",
+      "temp_min": "21",
       "temp_max": "27",
-      "precis": "Partly cloudy.",
-      "icon": 3,
-      "rain_probability": "30"
+      "precis": "Possible shower.",
+      "icon": 17,
+      "rain_probability": "40"
     },
     {
       "date": "2026-03-26",
       "temp_min": "15",
       "temp_max": "20",
-      "precis": "Shower or two.",
-      "icon": 11,
-      "rain_probability": "50"
+      "precis": "Possible shower.",
+      "icon": 17,
+      "rain_probability": "40"
     },
     {
       "date": "2026-03-27",
@@ -48,20 +48,20 @@
       "temp_max": "19",
       "precis": "Cloudy.",
       "icon": 4,
-      "rain_probability": "30"
-    },
-    {
-      "date": "2026-03-28",
-      "temp_min": "13",
-      "temp_max": "21",
-      "precis": "Partly cloudy.",
-      "icon": 3,
       "rain_probability": "20"
     },
     {
+      "date": "2026-03-28",
+      "temp_min": "12",
+      "temp_max": "22",
+      "precis": "Partly cloudy.",
+      "icon": 3,
+      "rain_probability": "10"
+    },
+    {
       "date": "2026-03-29",
-      "temp_min": "13",
-      "temp_max": "23",
+      "temp_min": "14",
+      "temp_max": "24",
       "precis": "Partly cloudy.",
       "icon": 3,
       "rain_probability": "5"
@@ -69,10 +69,10 @@
     {
       "date": "2026-03-30",
       "temp_min": "15",
-      "temp_max": "25",
+      "temp_max": "26",
       "precis": "Partly cloudy.",
       "icon": 3,
-      "rain_probability": "5"
+      "rain_probability": "10"
     }
   ]
 }

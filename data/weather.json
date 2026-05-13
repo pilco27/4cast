@@ -1,26 +1,18 @@
 {
   "meta": {
     "station": "Noarlunga",
-    "generated_utc": "2026-05-13T18:05:03Z"
+    "generated_utc": "2026-05-13T18:20:03Z"
   },
   "current": {
-    "timestamp_utc": "2026-05-13T18:00:00+00:00",
-    "timestamp_local": "2026-05-14T03:30:00+09:30",
-    "air_temp": 14.2,
-    "apparent_temp": 14.3
+    "timestamp_utc": "2026-05-13T18:10:00+00:00",
+    "timestamp_local": "2026-05-14T03:40:00+09:30",
+    "air_temp": 14.0,
+    "apparent_temp": 13.3
   },
   "forecast": [
     {
-      "date": "2026-05-13",
-      "temp_min": null,
-      "temp_max": null,
-      "precis": "Clear.",
-      "icon": 2,
-      "rain_probability": "5"
-    },
-    {
       "date": "2026-05-14",
-      "temp_min": "15",
+      "temp_min": null,
       "temp_max": "24",
       "precis": "Mostly sunny.",
       "icon": 3,
@@ -30,15 +22,15 @@
       "date": "2026-05-15",
       "temp_min": "17",
       "temp_max": "23",
-      "precis": "Showers increasing.",
+      "precis": "Showers.",
       "icon": 11,
-      "rain_probability": "90"
+      "rain_probability": "100"
     },
     {
       "date": "2026-05-16",
       "temp_min": "15",
-      "temp_max": "21",
-      "precis": "Showers.",
+      "temp_max": "20",
+      "precis": "Showers easing.",
       "icon": 11,
       "rain_probability": "95"
     },
@@ -46,33 +38,33 @@
       "date": "2026-05-17",
       "temp_min": "14",
       "temp_max": "20",
-      "precis": "Showers easing.",
-      "icon": 11,
-      "rain_probability": "80"
-    },
-    {
-      "date": "2026-05-18",
-      "temp_min": "12",
-      "temp_max": "19",
       "precis": "Shower or two.",
       "icon": 11,
       "rain_probability": "60"
     },
     {
-      "date": "2026-05-19",
+      "date": "2026-05-18",
       "temp_min": "14",
+      "temp_max": "19",
+      "precis": "Shower or two.",
+      "icon": 11,
+      "rain_probability": "70"
+    },
+    {
+      "date": "2026-05-19",
+      "temp_min": "13",
       "temp_max": "19",
       "precis": "Showers.",
       "icon": 11,
-      "rain_probability": "90"
+      "rain_probability": "80"
     },
     {
       "date": "2026-05-20",
       "temp_min": "12",
       "temp_max": "19",
-      "precis": "Shower or two.",
-      "icon": 11,
-      "rain_probability": "50"
+      "precis": "Possible shower.",
+      "icon": 17,
+      "rain_probability": "40"
     }
   ]
 }

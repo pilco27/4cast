@@ -1,26 +1,18 @@
 {
   "meta": {
     "station": "Noarlunga",
-    "generated_utc": "2026-05-29T18:05:04Z"
+    "generated_utc": "2026-05-29T18:20:03Z"
   },
   "current": {
-    "timestamp_utc": "2026-05-29T18:00:00+00:00",
-    "timestamp_local": "2026-05-30T03:30:00+09:30",
+    "timestamp_utc": "2026-05-29T18:10:00+00:00",
+    "timestamp_local": "2026-05-30T03:40:00+09:30",
     "air_temp": 14.8,
     "apparent_temp": 13.0
   },
   "forecast": [
     {
-      "date": "2026-05-29",
-      "temp_min": null,
-      "temp_max": null,
-      "precis": "Shower or two.",
-      "icon": 11,
-      "rain_probability": "50"
-    },
-    {
       "date": "2026-05-30",
-      "temp_min": "13",
+      "temp_min": null,
       "temp_max": "17",
       "precis": "Showers.",
       "icon": 11,
@@ -72,7 +64,7 @@
       "temp_max": "17",
       "precis": "Showers easing.",
       "icon": 11,
-      "rain_probability": "90"
+      "rain_probability": "80"
     }
   ]
 }

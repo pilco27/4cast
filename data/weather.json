@@ -1,19 +1,19 @@
 {
   "meta": {
     "station": "Noarlunga",
-    "generated_utc": "2026-05-29T05:35:03Z"
+    "generated_utc": "2026-05-29T05:50:16Z"
   },
   "current": {
-    "timestamp_utc": "2026-05-29T05:30:00+00:00",
-    "timestamp_local": "2026-05-29T15:00:00+09:30",
-    "air_temp": 17.4,
-    "apparent_temp": 17.2
+    "timestamp_utc": "2026-05-29T05:40:00+00:00",
+    "timestamp_local": "2026-05-29T15:10:00+09:30",
+    "air_temp": 17.2,
+    "apparent_temp": 16.0
   },
   "forecast": [
     {
       "date": "2026-05-29",
       "temp_min": null,
-      "temp_max": "18",
+      "temp_max": null,
       "precis": "Showers.",
       "icon": 11,
       "rain_probability": "90"
@@ -32,13 +32,13 @@
       "temp_max": "17",
       "precis": "Shower or two.",
       "icon": 11,
-      "rain_probability": "60"
+      "rain_probability": "70"
     },
     {
       "date": "2026-06-01",
       "temp_min": "11",
       "temp_max": "20",
-      "precis": "Showers.",
+      "precis": "Showers. Windy.",
       "icon": 11,
       "rain_probability": "100"
     },
@@ -62,6 +62,14 @@
       "date": "2026-06-04",
       "temp_min": "12",
       "temp_max": "18",
+      "precis": "Showers.",
+      "icon": 11,
+      "rain_probability": "90"
+    },
+    {
+      "date": "2026-06-05",
+      "temp_min": "12",
+      "temp_max": "17",
       "precis": "Showers.",
       "icon": 11,
       "rain_probability": "90"

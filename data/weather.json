@@ -1,70 +1,78 @@
 {
   "meta": {
     "station": "Noarlunga",
-    "generated_utc": "2026-06-06T03:50:03Z"
+    "generated_utc": "2026-06-11T06:20:04Z"
   },
   "current": {
-    "timestamp_utc": "2026-06-06T03:40:00+00:00",
-    "timestamp_local": "2026-06-06T13:10:00+09:30",
-    "air_temp": 16.9,
-    "apparent_temp": 17.0
+    "timestamp_utc": "2026-06-11T06:10:00+00:00",
+    "timestamp_local": "2026-06-11T15:40:00+09:30",
+    "air_temp": 18.9,
+    "apparent_temp": 20.3
   },
   "forecast": [
     {
-      "date": "2026-06-06",
+      "date": "2026-06-11",
       "temp_min": null,
-      "temp_max": "17",
+      "temp_max": null,
       "precis": "Partly cloudy.",
       "icon": 3,
-      "rain_probability": "30"
-    },
-    {
-      "date": "2026-06-07",
-      "temp_min": "10",
-      "temp_max": "17",
-      "precis": "Sunny.",
-      "icon": 1,
       "rain_probability": "10"
     },
     {
-      "date": "2026-06-08",
-      "temp_min": "11",
-      "temp_max": "17",
-      "precis": "Sunny.",
-      "icon": 1,
-      "rain_probability": "5"
+      "date": "2026-06-12",
+      "temp_min": "15",
+      "temp_max": "23",
+      "precis": "Cloudy.",
+      "icon": 4,
+      "rain_probability": "10"
     },
     {
-      "date": "2026-06-09",
-      "temp_min": "11",
-      "temp_max": "20",
+      "date": "2026-06-13",
+      "temp_min": "14",
+      "temp_max": "19",
+      "precis": "Rain.",
+      "icon": 12,
+      "rain_probability": "100"
+    },
+    {
+      "date": "2026-06-14",
+      "temp_min": "8",
+      "temp_max": "17",
       "precis": "Mostly sunny.",
       "icon": 3,
-      "rain_probability": "20"
+      "rain_probability": "10"
     },
     {
-      "date": "2026-06-10",
-      "temp_min": "14",
+      "date": "2026-06-15",
+      "temp_min": "11",
       "temp_max": "18",
-      "precis": "Showers easing.",
+      "precis": "Showers.",
       "icon": 11,
-      "rain_probability": "80"
+      "rain_probability": "95"
     },
     {
-      "date": "2026-06-11",
-      "temp_min": "10",
-      "temp_max": "18",
-      "precis": "Possible shower.",
-      "icon": 17,
-      "rain_probability": "40"
-    },
-    {
-      "date": "2026-06-12",
+      "date": "2026-06-16",
       "temp_min": "13",
       "temp_max": "19",
       "precis": "Showers.",
       "icon": 11,
+      "rain_probability": "95"
+    },
+    {
+      "date": "2026-06-17",
+      "temp_min": "14",
+      "temp_max": "17",
+      "precis": "Showers.",
+      "icon": 11,
       "rain_probability": "90"
+    },
+    {
+      "date": "2026-06-18",
+      "temp_min": "11",
+      "temp_max": "15",
+      "precis": "Showers.",
+      "icon": 11,
+      "rain_probability": "80"
     }
   ]
 }

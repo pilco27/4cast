@@ -1,13 +1,13 @@
 {
   "meta": {
     "station": "Noarlunga",
-    "generated_utc": "2026-11-08T10:35:03Z"
+    "generated_utc": "2026-11-08T10:50:03Z"
   },
   "current": {
-    "timestamp_utc": "2026-11-08T10:30:00+00:00",
-    "timestamp_local": "2026-11-08T21:00:00+10:30",
-    "air_temp": 15.3,
-    "apparent_temp": 12.1
+    "timestamp_utc": "2026-11-08T10:40:00+00:00",
+    "timestamp_local": "2026-11-08T21:10:00+10:30",
+    "air_temp": 15.1,
+    "apparent_temp": 11.9
   },
   "forecast": [
     {
@@ -21,7 +21,7 @@
     {
       "date": "2026-11-09",
       "temp_min": "15",
-      "temp_max": "27",
+      "temp_max": "26",
       "precis": "Possible shower.",
       "icon": 17,
       "rain_probability": "40"
@@ -30,33 +30,33 @@
       "date": "2026-11-10",
       "temp_min": "18",
       "temp_max": "26",
-      "precis": "Mostly sunny.",
-      "icon": 3,
+      "precis": "Sunny.",
+      "icon": 1,
       "rain_probability": "10"
     },
     {
       "date": "2026-11-11",
       "temp_min": "13",
-      "temp_max": "20",
-      "precis": "Partly cloudy.",
-      "icon": 3,
+      "temp_max": "21",
+      "precis": "Cloudy.",
+      "icon": 4,
       "rain_probability": "10"
     },
     {
       "date": "2026-11-12",
       "temp_min": "11",
       "temp_max": "24",
-      "precis": "Mostly sunny.",
-      "icon": 3,
-      "rain_probability": "5"
+      "precis": "Sunny.",
+      "icon": 1,
+      "rain_probability": "0"
     },
     {
       "date": "2026-11-13",
       "temp_min": "13",
-      "temp_max": "26",
-      "precis": "Possible shower.",
-      "icon": 17,
-      "rain_probability": "40"
+      "temp_max": "25",
+      "precis": "Shower or two.",
+      "icon": 11,
+      "rain_probability": "50"
     },
     {
       "date": "2026-11-14",
@@ -70,9 +70,9 @@
       "date": "2026-11-15",
       "temp_min": "13",
       "temp_max": "23",
-      "precis": "Partly cloudy.",
-      "icon": 3,
-      "rain_probability": "10"
+      "precis": "Cloudy.",
+      "icon": 4,
+      "rain_probability": "20"
     }
   ]
 }

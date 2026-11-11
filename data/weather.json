@@ -1,11 +1,11 @@
 {
   "meta": {
     "station": "Noarlunga",
-    "generated_utc": "2026-11-11T10:35:02Z"
+    "generated_utc": "2026-11-11T10:50:03Z"
   },
   "current": {
-    "timestamp_utc": "2026-11-11T10:30:00+00:00",
-    "timestamp_local": "2026-11-11T21:00:00+10:30",
+    "timestamp_utc": "2026-11-11T10:40:00+00:00",
+    "timestamp_local": "2026-11-11T21:10:00+10:30",
     "air_temp": 12.9,
     "apparent_temp": 10.3
   },
@@ -14,8 +14,8 @@
       "date": "2026-11-11",
       "temp_min": null,
       "temp_max": null,
-      "precis": "Clear.",
-      "icon": 2,
+      "precis": "Mostly clear.",
+      "icon": 3,
       "rain_probability": "0"
     },
     {
@@ -24,19 +24,19 @@
       "temp_max": "25",
       "precis": "Mostly sunny.",
       "icon": 3,
-      "rain_probability": "5"
+      "rain_probability": "10"
     },
     {
       "date": "2026-11-13",
-      "temp_min": "15",
-      "temp_max": "25",
+      "temp_min": "14",
+      "temp_max": "24",
       "precis": "Showers easing.",
       "icon": 11,
       "rain_probability": "80"
     },
     {
       "date": "2026-11-14",
-      "temp_min": "14",
+      "temp_min": "13",
       "temp_max": "21",
       "precis": "Cloudy.",
       "icon": 4,
@@ -45,34 +45,34 @@
     {
       "date": "2026-11-15",
       "temp_min": "12",
-      "temp_max": "21",
-      "precis": "Possible shower.",
-      "icon": 17,
-      "rain_probability": "40"
+      "temp_max": "20",
+      "precis": "Shower or two.",
+      "icon": 11,
+      "rain_probability": "50"
     },
     {
       "date": "2026-11-16",
       "temp_min": "11",
-      "temp_max": "20",
-      "precis": "Partly cloudy.",
-      "icon": 3,
-      "rain_probability": "20"
+      "temp_max": "19",
+      "precis": "Cloudy.",
+      "icon": 4,
+      "rain_probability": "10"
     },
     {
       "date": "2026-11-17",
       "temp_min": "10",
       "temp_max": "22",
-      "precis": "Cloudy.",
-      "icon": 4,
-      "rain_probability": "20"
+      "precis": "Partly cloudy.",
+      "icon": 3,
+      "rain_probability": "10"
     },
     {
       "date": "2026-11-18",
-      "temp_min": "11",
+      "temp_min": "13",
       "temp_max": "26",
       "precis": "Partly cloudy.",
       "icon": 3,
-      "rain_probability": "20"
+      "rain_probability": "10"
     }
   ]
 }
